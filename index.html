@@ -1,822 +1,492 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Python.org - The Official Home of the Python Programming Language</title>
-    <meta name="description" content="Explore the official website for the Python programming language. Discover its features, documentation, community, and get started with Python.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='transparent' stroke='black' stroke-width='5'/><path d='M50 10 L20 70 L80 70 Z' fill='black'/></svg>" type="image/svg+xml">
+    <title>SaaSify - Your All-in-One Solution</title>
+    <meta name="description" content="SaaSify is a modern, powerful SaaS platform designed to streamline your workflow, boost productivity, and drive growth. Experience the future of business management with our intuitive and feature-rich solution.">
+    <meta name="keywords" content="SaaS, business software, productivity, workflow, growth, management, cloud, solution, modern, dark mode, responsive, Tailwind CSS">
+    <meta name="author" content="Your Company Name">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.saasify.com/"> <!-- Replace with your actual domain -->
+    <meta property="og:title" content="SaaSify - Your All-in-One Solution">
+    <meta property="og:description" content="SaaSify is a modern, powerful SaaS platform designed to streamline your workflow, boost productivity, and drive growth. Experience the future of business management with our intuitive and feature-rich solution.">
+    <meta property="og:image" content="https://www.saasify.com/images/og-image.jpg"> <!-- Replace with your actual OG image URL -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.saasify.com/"> <!-- Replace with your actual domain -->
+    <meta property="twitter:title" content="SaaSify - Your All-in-One Solution">
+    <meta property="twitter:description" content="SaaSify is a modern, powerful SaaS platform designed to streamline your workflow, boost productivity, and drive growth. Experience the future of business management with our intuitive and feature-rich solution.">
+    <meta property="twitter:image" content="https://www.saasify.com/images/twitter-image.jpg"> <!-- Replace with your actual Twitter image URL -->
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        /* Custom styles for dark mode and other enhancements */
         :root {
-            --primary-color: #007396;
-            --secondary-color: #3776ab;
-            --dark-blue: #1f3d47;
-            --light-gray: #f4f7f6;
-            --white: #ffffff;
-            --text-color: #333333;
-            --heading-color: #2c3e50;
-            --footer-bg: #2c3e50;
-            --button-hover-bg: #005f7d;
-            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            --transition-speed: 0.3s;
+            --bg-color: #111827; /* Dark background */
+            --text-color: #e5e7eb; /* Light text */
+            --primary-color: #3b82f6; /* Blue for accents */
+            --secondary-color: #9ca3af; /* Gray for secondary text */
+            --card-bg: #1f2937; /* Darker card background */
+            --border-color: #374151; /* Darker border */
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        .dark {
+            background-color: var(--bg-color);
             color: var(--text-color);
-            background-color: var(--white);
+        }
+
+        .dark body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .dark .text-gray-700 { color: var(--secondary-color); }
+        .dark .text-gray-900 { color: var(--text-color); }
+        .dark .text-blue-600 { color: var(--primary-color); }
+        .dark .bg-gray-100 { background-color: var(--card-bg); }
+        .dark .border-gray-300 { border-color: var(--border-color); }
+        .dark .hover\:bg-gray-700:hover { background-color: var(--card-bg); }
+        .dark .hover\:text-gray-200:hover { color: var(--text-color); }
+        .dark .bg-primary-gradient {
+            background-image: linear-gradient(to right, #2563eb, #3b82f6); /* Darker blue gradient */
+        }
+        .dark .text-primary-gradient {
+            background-image: linear-gradient(to right, #2563eb, #3b82f6); /* Darker blue gradient */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Smooth scrolling */
+        html.scroll-smooth {
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4 {
-            color: var(--heading-color);
-            margin-bottom: 0.75em;
+        /* Custom animation for hero section */
+        .hero-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
         }
 
-        h1 { font-size: 2.8em; font-weight: 700; }
-        h2 { font-size: 2.2em; font-weight: 600; }
-        h3 { font-size: 1.8em; font-weight: 600; }
-        h4 { font-size: 1.4em; font-weight: 600; }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color var(--transition-speed) ease;
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        a:hover {
-            color: var(--secondary-color);
+        /* For SVG icons */
+        .icon-color {
+            fill: var(--text-color);
+        }
+        .dark .icon-color {
+            fill: var(--text-color);
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* Header */
-        .site-header {
-            background-color: var(--white);
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .site-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: -1px;
-        }
-
-        .site-nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        .site-nav ul li {
-            margin-left: 25px;
-        }
-
-        .site-nav ul li a {
-            font-weight: 500;
-            font-size: 1.1em;
-            color: var(--text-color);
-            transition: color var(--transition-speed) ease;
-        }
-
-        .site-nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            font-size: 2em;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
+        /* Preloader (optional, for even faster perceived load if needed) */
+        /* #preloader {
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23ffffff' stop-opacity='0.1' offset='0'/%3E%3Cstop stop-color='%23000000' stop-opacity='0' offset='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='translate(0 0)'%3E%3Cpath d='M0 0 L40 40' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M40 0 L0 40' stroke='%23ffffff' stroke-width='2'/%3E%3C/pattern%3E%3Crect width='100%' height='100%' fill='url(%23b)'/%3E%3C/svg%3E");
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .hero-section h1 {
-            margin-bottom: 0.5em;
-            font-size: 3.5em;
-            color: var(--white);
-        }
-
-        .hero-section p {
-            font-size: 1.4em;
-            margin-bottom: 2em;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 15px 35px;
-            font-size: 1.2em;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background-color: var(--button-hover-bg);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        /* Features Section */
-        .features-section {
-            padding: 5rem 0;
-            background-color: var(--light-gray);
-        }
-
-        .features-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .feature-card i { /* Placeholder for icons */
-            font-size: 3em;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.6em;
-            color: var(--heading-color);
-        }
-
-        .feature-card p {
-            color: #555;
-            font-size: 1.1em;
-        }
-
-        /* Testimonials Section */
-        .testimonials-section {
-            padding: 5rem 0;
-            background-color: var(--white);
-        }
-
-        .testimonials-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .testimonials-slider {
-            position: relative;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        .testimonial-item {
-            background-color: var(--light-gray);
-            padding: 35px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .testimonial-item .quote {
-            font-size: 1.3em;
-            font-style: italic;
-            color: #444;
-            margin-bottom: 25px;
-            position: relative;
-            padding: 0 30px;
-        }
-
-        .testimonial-item .quote::before,
-        .testimonial-item .quote::after {
-            content: '"';
-            font-size: 3em;
-            color: var(--primary-color);
-            position: absolute;
-            opacity: 0.3;
-        }
-
-        .testimonial-item .quote::before {
-            top: -0.2em;
-            left: -0.1em;
-        }
-
-        .testimonial-item .quote::after {
-            bottom: -0.4em;
-            right: -0.1em;
-        }
-
-        .testimonial-item .author {
-            font-weight: 600;
-            font-size: 1.1em;
-            color: var(--heading-color);
-        }
-
-        .testimonial-item .author span {
-            display: block;
-            font-weight: 400;
-            font-size: 0.9em;
-            color: #777;
-            margin-top: 5px;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 5rem 0;
-            background-color: var(--light-gray);
-        }
-
-        .faq-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .faq-accordion {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background-color: var(--white);
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 20px 25px;
-            font-weight: 600;
-            font-size: 1.2em;
-            cursor: pointer;
-            position: relative;
-            transition: background-color var(--transition-speed) ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--white);
-        }
-
-        .faq-question:hover {
-            background-color: var(--light-gray);
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5em;
-            color: var(--primary-color);
-            transition: transform var(--transition-speed) ease;
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-            padding: 0 25px;
-            background-color: var(--white);
-            border-top: 1px solid #eee;
-        }
-
-        .faq-answer p {
-            padding: 20px 0;
-            color: #555;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 5rem 0;
-            background-color: var(--white);
-        }
-
-        .contact-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--heading-color);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(0, 115, 150, 0.2);
-        }
-
-        .contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .contact-form .submit-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 15px 35px;
-            font-size: 1.1em;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .contact-form .submit-button:hover {
-            background-color: var(--button-hover-bg);
-            transform: translateY(-2px);
-        }
-
-        .contact-info {
-            background-color: var(--dark-blue);
-            color: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            height: fit-content;
-        }
-
-        .contact-info h3 {
-            color: var(--white);
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            opacity: 0.9;
-        }
-
-        .contact-info p i {
-            margin-right: 10px;
-            color: var(--primary-color);
-        }
-
-        .contact-info .social-links a {
-            color: var(--white);
-            font-size: 1.5em;
-            margin-right: 15px;
-            transition: color var(--transition-speed) ease;
-        }
-
-        .contact-info .social-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Footer */
-        .site-footer {
-            background-color: var(--footer-bg);
-            color: var(--white);
-            padding: 3rem 0;
-            text-align: center;
-            font-size: 0.9em;
-        }
-
-        .site-footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .site-footer .footer-links {
-            margin: 1.5rem 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .site-footer .footer-links a {
-            color: var(--white);
-            opacity: 0.8;
-            transition: opacity var(--transition-speed) ease;
-        }
-
-        .site-footer .footer-links a:hover {
-            opacity: 1;
-        }
-
-        .site-footer p {
-            opacity: 0.7;
-        }
-
-        .site-footer .logo-footer {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--white);
-            letter-spacing: -0.5px;
-        }
-
-        /* Scroll to Top Button */
-        .scroll-top-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-color);
+            z-index: 9999;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5em;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1001;
+            transition: opacity 0.5s ease-out;
+        }
+        #preloader.hidden {
             opacity: 0;
             visibility: hidden;
-            transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease, transform var(--transition-speed) ease;
         }
-
-        .scroll-top-btn.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(-5px);
+        .spinner {
+            border: 4px solid var(--primary-color);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: transparent;
+            animation: spin 1s linear infinite;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .site-header .container {
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .site-nav {
-                display: none;
-                width: 100%;
-                text-align: center;
-                padding-top: 1rem;
-            }
-
-            .site-nav ul {
-                flex-direction: column;
-            }
-
-            .site-nav ul li {
-                margin: 10px 0;
-            }
-
-            .hero-section h1 {
-                font-size: 2.5em;
-            }
-
-            .hero-section p {
-                font-size: 1.2em;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                margin-top: 30px;
-            }
-
-            .scroll-top-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-section {
-                padding: 4rem 0;
-            }
-
-            .hero-section h1 {
-                font-size: 2em;
-            }
-
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 1.1em;
-            }
-
-            .feature-card, .testimonial-item, .faq-item {
-                padding: 20px;
-            }
-
-            .contact-form input, .contact-form textarea {
-                padding: 10px 12px;
-            }
-        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        } */
     </style>
 </head>
-<body>
+<body class="dark">
 
-    <header class="site-header">
-        <div class="container">
-            <div class="logo">Python</div>
-            <button class="mobile-menu-toggle" aria-label="Toggle Menu">&#9776;</button>
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Optional Preloader -->
+    <!-- <div id="preloader">
+        <div class="spinner"></div>
+    </div> -->
+
+    <header class="sticky top-0 z-50 bg-gray-900 dark:bg-gray-900 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white dark:text-white">
+                SaaSify
+            </a>
+            <div class="space-x-4">
+                <a href="#features" class="text-gray-300 dark:text-gray-300 hover:text-white dark:hover:text-white transition duration-300">Features</a>
+                <a href="#pricing" class="text-gray-300 dark:text-gray-300 hover:text-white dark:hover:text-white transition duration-300">Pricing</a>
+                <a href="#testimonials" class="text-gray-300 dark:text-gray-300 hover:text-white dark:hover:text-white transition duration-300">Testimonials</a>
+                <a href="#contact" class="text-gray-300 dark:text-gray-300 hover:text-white dark:hover:text-white transition duration-300">Contact</a>
+            </div>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-300 dark:text-gray-300 hover:text-white dark:hover:text-white transition duration-300">Login</a>
+                <button class="bg-blue-600 dark:bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-800 transition duration-300">Sign Up</button>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="container">
-                <h1>The Official Home of the Python Programming Language</h1>
-                <p>Discover the power, simplicity, and versatility of Python. Start your coding journey today.</p>
-                <a href="#" class="cta-button">Get Started with Python</a>
+        <!-- Hero Section -->
+        <section class="relative bg-gray-900 dark:bg-gray-900 text-white py-24 md:py-32 lg:py-40">
+            <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-left hero-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Transform Your Business with
+                        <span class="text-primary-gradient">SaaSify</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 dark:text-gray-300 mb-8">
+                        Streamline your operations, boost productivity, and unlock new growth opportunities with our all-in-one SaaS platform.
+                    </p>
+                    <div class="flex justify-center lg:justify-start space-x-4">
+                        <button class="bg-blue-600 dark:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition duration-300 text-lg">
+                            Get Started Free
+                        </button>
+                        <button class="border-2 border-gray-700 dark:border-gray-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-700 transition duration-300 text-lg">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center lg:justify-end hero-fade-in" style="animation-delay: 0.3s;">
+                    <img src="https://via.placeholder.com/600x400/1a202c/ffffff?text=SaaSify+Dashboard+Mockup" alt="SaaSify Dashboard Mockup" class="rounded-lg shadow-xl w-full max-w-md lg:max-w-xl">
+                </div>
+            </div>
+            <!-- Background elements for visual flair -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+                <svg class="absolute top-0 right-0 -mt-20 -mr-20 opacity-30" width="300" height="300" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="90" stroke="url(#heroGradient1)" stroke-width="5"/>
+                    <defs>
+                        <linearGradient id="heroGradient1" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#60A5FA" offset="0%"/>
+                            <stop stop-color="#2563EB" offset="100%"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <svg class="absolute bottom-0 left-0 -mb-20 -ml-20 opacity-30" width="300" height="300" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="90" stroke="url(#heroGradient2)" stroke-width="5"/>
+                    <defs>
+                        <linearGradient id="heroGradient2" x1="0" y1="100" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#818CF8" offset="0%"/>
+                            <stop stop-color="#4F46E5" offset="100%"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
             </div>
         </section>
 
-        <section id="features" class="features-section">
-            <div class="container">
-                <h2>Why Choose Python?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-lightbulb"></i> <!-- Placeholder for icon -->
-                        <h3>Intuitive Interpretation</h3>
-                        <p>Python's clear, readable syntax makes it easy to understand and write code, allowing you to focus on solving problems rather than on complex language constructs.</p>
+        <!-- Features Section -->
+        <section id="features" class="py-24 bg-gray-800 dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white dark:text-white mb-4">Powerful Features to Elevate Your Business</h2>
+                    <p class="text-lg text-gray-300 dark:text-gray-300">Discover the tools that drive efficiency and innovation.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Feature 1 -->
+                    <div class="bg-gray-800 dark:bg-gray-850 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700 hover:shadow-2xl transition duration-300">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-blue-500 dark:text-blue-400 icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">Secure & Scalable</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Our robust infrastructure ensures your data is safe and our platform scales with your business needs.</p>
                     </div>
-                    <div class="feature-card">
-                        <i class="fas fa-box-open"></i> <!-- Placeholder for icon -->
-                        <h3>Compound Data Types</h3>
-                        <p>Effortlessly work with built-in data structures like lists, tuples, dictionaries, and sets, which simplify complex data management and manipulation.</p>
+                    <!-- Feature 2 -->
+                    <div class="bg-gray-800 dark:bg-gray-850 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700 hover:shadow-2xl transition duration-300">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-green-500 dark:text-green-400 icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 12V7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">Intuitive Dashboard</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Access all your essential data and controls from a clean, user-friendly interface.</p>
                     </div>
-                    <div class="feature-card">
-                        <i class="fas fa-stream"></i> <!-- Placeholder for icon -->
-                        <h3>All the Flow You’d Expect</h3>
-                        <p>Master control flow with familiar constructs like if/elif/else statements, for loops, and while loops, making your programs dynamic and responsive.</p>
+                    <!-- Feature 3 -->
+                    <div class="bg-gray-800 dark:bg-gray-850 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700 hover:shadow-2xl transition duration-300">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-purple-500 dark:text-purple-400 icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v10l9-11h-7V10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">Automated Workflows</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Automate repetitive tasks and free up your team to focus on strategic initiatives.</p>
                     </div>
-                    <div class="feature-card">
-                        <i class="fas fa-cog"></i> <!-- Placeholder for icon -->
-                        <h3>Functions Defined</h3>
-                        <p>Organize your code into reusable blocks with functions, promoting modularity, reducing redundancy, and enhancing code maintainability.</p>
+                    <!-- Feature 4 -->
+                    <div class="bg-gray-800 dark:bg-gray-850 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700 hover:shadow-2xl transition duration-300">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-yellow-500 dark:text-yellow-400 icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m-12 6h8m-8 6h12M6 17l-2 3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">Seamless Integration</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Connect with your favorite tools and services effortlessly for a unified experience.</p>
                     </div>
-                    <div class="feature-card">
-                        <i class="fas fa-infinity"></i> <!-- Placeholder for icon -->
-                        <h3>Quick & Easy to Learn</h3>
-                        <p>Whether you're a beginner or an experienced developer, Python's gentle learning curve allows you to become productive quickly, thanks to its extensive documentation and vibrant community.</p>
+                    <!-- Feature 5 -->
+                    <div class="bg-gray-800 dark:bg-gray-850 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700 hover:shadow-2xl transition duration-300">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-red-500 dark:text-red-400 icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm7 3h2M7 11h10M7 15h6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">Advanced Analytics</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Gain deep insights into your business performance with comprehensive reporting and analytics.</p>
+                    </div>
+                    <!-- Feature 6 -->
+                    <div class="bg-gray-800 dark:bg-gray-850 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700 hover:shadow-2xl transition duration-300">
+                        <div class="mb-6">
+                            <svg class="w-12 h-12 text-indigo-500 dark:text-indigo-400 icon-color" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">24/7 Support</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Our dedicated support team is available around the clock to assist you.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="testimonials-section">
-            <div class="container">
-                <h2>What Our Users Say</h2>
-                <div class="testimonials-slider">
-                    <div class="testimonial-item">
-                        <p class="quote">"Python has revolutionized how I approach complex data analysis. Its readability and vast libraries make difficult tasks manageable and enjoyable."</p>
-                        <div class="author">Jane Doe<span>Data Scientist</span></div>
-                    </div>
-                    <!-- Add more testimonials here if needed -->
+        <!-- How It Works Section -->
+        <section class="py-24 bg-gray-850 dark:bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white dark:text-white mb-4">Get Started in 3 Simple Steps</h2>
+                    <p class="text-lg text-gray-300 dark:text-gray-300">It's never been easier to transform your business.</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="faq" class="faq-section">
-            <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-accordion">
-                    <div class="faq-item">
-                        <div class="faq-question">What is Python used for?</div>
-                        <div class="faq-answer">
-                            <p>Python is incredibly versatile and is used for web development (frameworks like Django and Flask), data science, machine learning, artificial intelligence, scientific computing, automation, scripting, game development, and much more.</p>
+                <div class="flex flex-col lg:flex-row justify-around items-center">
+                    <div class="text-center mb-12 lg:mb-0 w-full lg:w-1/3 px-4">
+                        <div class="w-20 h-20 bg-primary-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-5xl font-bold text-white">1</span>
                         </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">Sign Up</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Create your free account in seconds and get access to all features.</p>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Is Python free to use?</div>
-                        <div class="faq-answer">
-                            <p>Yes, Python is an open-source language and is completely free to download, use, and distribute, even for commercial purposes.</p>
+                    <div class="text-center mb-12 lg:mb-0 w-full lg:w-1/3 px-4">
+                        <div class="w-20 h-20 bg-blue-500 dark:bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-5xl font-bold text-white">2</span>
                         </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">Configure</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Customize your settings and integrate with your existing tools.</p>
                     </div>
-                    <div class="faq-item">
-                        <div class="faq-question">How do I install Python?</div>
-                        <div class="faq-answer">
-                            <p>You can download the latest version of Python from the official Python website (python.org). The installers are available for Windows, macOS, and Linux. Follow the on-screen instructions for a straightforward installation.</p>
+                    <div class="text-center w-full lg:w-1/3 px-4">
+                        <div class="w-20 h-20 bg-indigo-500 dark:bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <span class="text-5xl font-bold text-white">3</span>
                         </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">What programming experience do I need?</div>
-                        <div class="faq-answer">
-                            <p>Python is known for its beginner-friendly syntax, making it an excellent choice for those new to programming. However, its power and extensive libraries also make it a favorite among experienced developers.</p>
-                        </div>
+                        <h3 class="text-2xl font-bold text-white dark:text-white mb-3">Achieve</h3>
+                        <p class="text-gray-300 dark:text-gray-300">Start streamlining your business and reaching your goals.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Get In Touch</h2>
-                <div class="contact-grid">
-                    <form class="contact-form">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your Name">
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-24 bg-gray-900 dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white dark:text-white mb-4">Flexible Pricing for Every Business</h2>
+                    <p class="text-lg text-gray-300 dark:text-gray-300">Choose the plan that best fits your needs and budget.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Plan 1: Free -->
+                    <div class="bg-gray-800 dark:bg-gray-850 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-3xl font-bold text-white dark:text-white mb-4">Free</h3>
+                            <p class="text-gray-300 dark:text-gray-300 mb-6">Perfect for individuals and small teams starting out.</p>
+                            <div class="mb-8">
+                                <span class="text-5xl font-bold text-white dark:text-white">$0</span>
+                                <span class="text-gray-400 dark:text-gray-500">/month</span>
+                            </div>
+                            <ul>
+                                <li class="flex items-center mb-3 text-gray-300 dark:text-gray-300">
+                                    <svg class="w-5 h-5 mr-2 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Basic Features
+                                </li>
+                                <li class="flex items-center mb-3 text-gray-300 dark:text-gray-300">
+                                    <svg class="w-5 h-5 mr-2 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Limited Users
+                                </li>
+                                <li class="flex items-center text-gray-400 dark:text-gray-500">
+                                    <svg class="w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                    Advanced Analytics
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="mt-8 w-full bg-gray-700 dark:bg-gray-600 text-white font-semibold py-3 rounded-lg hover:bg-gray-600 dark:hover:bg-gray-500 transition duration-300">
+                            Get Started Free
+                        </button>
+                    </div>
+                    <!-- Plan 2: Pro (Highlighted) -->
+                    <div class="bg-primary-gradient dark:bg-primary-gradient-dark rounded-lg shadow-xl p-8 border-2 border-blue-500 dark:border-blue-600 flex flex-col justify-between transform scale-105">
+                        <div class="text-white">
+                            <h3 class="text-3xl font-bold mb-4">Pro</h3>
+                            <p class="text-blue-100 mb-6">Ideal for growing businesses needing more power.</p>
+                            <div class="mb-8">
+                                <span class="text-5xl font-bold">$49</span>
+                                <span class="text-blue-200">/month</span>
+                            </div>
+                            <ul>
+                                <li class="flex items-center mb-3">
+                                    <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    All Free Features
+                                </li>
+                                <li class="flex items-center mb-3">
+                                    <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Unlimited Users
+                                </li>
+                                <li class="flex items-center mb-3">
+                                    <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Advanced Analytics
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Priority Support
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="mt-8 w-full bg-white text-blue-600 font-semibold py-3 rounded-lg hover:bg-blue-100 transition duration-300">
+                            Choose Pro Plan
+                        </button>
+                    </div>
+                    <!-- Plan 3: Enterprise -->
+                    <div class="bg-gray-800 dark:bg-gray-850 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-3xl font-bold text-white dark:text-white mb-4">Enterprise</h3>
+                            <p class="text-gray-300 dark:text-gray-300 mb-6">Custom solutions for large organizations.</p>
+                            <div class="mb-8">
+                                <span class="text-5xl font-bold text-white dark:text-white">Custom</span>
+                            </div>
+                            <ul>
+                                <li class="flex items-center mb-3 text-gray-300 dark:text-gray-300">
+                                    <svg class="w-5 h-5 mr-2 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Dedicated Account Manager
+                                </li>
+                                <li class="flex items-center mb-3 text-gray-300 dark:text-gray-300">
+                                    <svg class="w-5 h-5 mr-2 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Advanced Security Features
+                                </li>
+                                <li class="flex items-center mb-3 text-gray-300 dark:text-gray-300">
+                                    <svg class="w-5 h-5 mr-2 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Custom Integrations
+                                </li>
+                                <li class="flex items-center text-gray-300 dark:text-gray-300">
+                                    <svg class="w-5 h-5 mr-2 text-green-500 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    24/7 Premium Support
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="mt-8 w-full bg-blue-600 dark:bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition duration-300">
+                            Contact Sales
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
-
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </form>
-                    <div class="contact-info">
-                        <h3>Python Software Foundation</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Python Way, Silicon Valley, CA 94000</p>
-                        <p><i class="fas fa-envelope"></i> info@python.org</p>
-                        <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 bg-gray-800 dark:bg-gray-850">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white dark:text-white mb-4">What Our Clients Say</h2>
+                    <p class="text-lg text-gray-300 dark:text-gray-300">Trusted by businesses of all sizes.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-850 dark:bg-gray-800 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700">
+                        <p class="text-gray-300 dark:text-gray-300 italic mb-6">"SaaSify has completely revolutionized our workflow. The intuitive design and powerful features have boosted our team's productivity significantly."</p>
+                        <div class="flex items-center">
+                            <img src="https://via.placeholder.com/50/3b82f6/ffffff?text=JD" alt="John Doe" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-white dark:text-white font-bold">Jane Doe</p>
+                                <p class="text-blue-400 dark:text-blue-300 text-sm">CEO, TechInnovate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-850 dark:bg-gray-800 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700">
+                        <p class="text-gray-300 dark:text-gray-300 italic mb-6">"The scalability and security of SaaSify are unmatched. It has allowed us to grow rapidly without compromising on our data protection."</p>
+                        <div class="flex items-center">
+                            <img src="https://via.placeholder.com/50/93c5fd/ffffff?text=RP" alt="Richard Roe" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-white dark:text-white font-bold">Richard Roe</p>
+                                <p class="text-blue-400 dark:text-blue-300 text-sm">CTO, DataGuard Corp</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="bg-gray-850 dark:bg-gray-800 dark:border-gray-700 rounded-lg shadow-lg p-8 border border-gray-700">
+                        <p class="text-gray-300 dark:text-gray-300 italic mb-6">"Customer support is excellent! Whenever we have a question, they're quick to respond and resolve it. Highly recommended!"</p>
+                        <div class="flex items-center">
+                            <img src="https://via.placeholder.com/50/a5b4fc/ffffff?text=AS" alt="Alice Smith" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-white dark:text-white font-bold">Alice Smith</p>
+                                <p class="text-blue-400 dark:text-blue-300 text-sm">Operations Manager, GrowthHub</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="py-24 bg-gray-900 dark:bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white dark:text-white mb-6">Ready to Elevate Your Business?</h2>
+                <p class="text-lg md:text-xl text-gray-300 dark:text-gray-300 mb-12">Join thousands of businesses already succeeding with SaaSify. Start your free trial today!</p>
+                <button class="bg-blue-600 dark:bg-blue-700 text-white font-semibold py-4 px-10 rounded-lg shadow-xl hover:bg-blue-700 dark:hover:bg-blue-800 transition duration-300 text-lg">
+                    Start Your Free Trial Now
+                </button>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="logo-footer">Python</div>
-            <div class="footer-links">
-                <a href="#">About</a>
-                <a href="#">Jobs</a>
-                <a href="#">Contact</a>
-                <a href="#">Legal</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Privacy Policy</a>
+    <footer class="bg-gray-800 dark:bg-gray-900 py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-gray-400 dark:text-gray-500">
+            <div class="mb-6 md:mb-0">
+                <p>&copy; 2023 SaaSify. All rights reserved.</p>
             </div>
-            <p>&copy; 2023 Python Software Foundation. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white dark:hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-white dark:hover:text-white transition duration-300">Terms of Service</a>
+                <a href="#" class="hover:text-white dark:hover:text-white transition duration-300">Contact Us</a>
+            </div>
         </div>
     </footer>
 
-    <button class="scroll-top-btn" aria-label="Scroll to top">&#x25B2;</button>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const siteNav = document.querySelector('.site-nav');
-
-            if (mobileMenuToggle && siteNav) {
-                mobileMenuToggle.addEventListener('click', () => {
-                    siteNav.style.display = siteNav.style.display === 'block' ? 'none' : 'block';
-                });
+    <!-- <script>
+        // Simple preloader logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
             }
-
-            // FAQ Accordion
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                    if (item.classList.contains('active')) {
-                        answer.style.maxHeight = answer.scrollHeight + "px";
-                        answer.style.padding = "20px 25px";
-                    } else {
-                        answer.style.maxHeight = null;
-                        answer.style.padding = "0 25px";
-                    }
-                });
-            });
-
-            // Scroll to Top Button
-            const scrollTopBtn = document.querySelector('.scroll-top-btn');
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 200) {
-                    scrollTopBtn.classList.add('show');
-                } else {
-                    scrollTopBtn.classList.remove('show');
-                }
-            });
-
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // Add Font Awesome icons (example, assuming it's loaded externally or could be inlined)
-            // For this example, we'll use generic placeholders in CSS, but you'd typically link FA CDN or include its CSS.
-            // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         });
-    </script>
+    </script> -->
 </body>
 </html>
+```
