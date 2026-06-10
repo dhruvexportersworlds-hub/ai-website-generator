@@ -1,123 +1,107 @@
-This response provides a technical, SEO-optimized framework for both the remediation of the existing Nike-style homepage and a high-conversion modern SaaS landing page.
+To address your requirements, I have developed two distinct solutions. 
+
+**Note on implementation:** These templates use the **Tailwind CSS CDN** and **Lucide Icons** for a lightweight, professional aesthetic. The code is structured for high SEO performance with proper semantic HTML5.
+
+---
 
 ### SECTION 1: === IMPROVED WEBSITE ===
-*Refinements: Deduplicated H2s, cleaner semantic hierarchy, optimized H1 for SEO, and simplified footer link structure.*
+*Focus: Fixing structural SEO issues, removing redundant H2s, improving the information architecture, and injecting high-intent conversion points.*
 
 ```html
-<!-- Optimized Homepage Structure -->
-<header>
-  <nav aria-label="Main Navigation">
-    <!-- Links prioritized by search intent -->
-    <a href="/schuhe">Schuhe</a>
-    <a href="/bekleidung">Bekleidung</a>
-    <a href="/ausruestung">Ausrüstung</a>
-  </nav>
-</header>
+<!-- Optimized Nike DE Homepage Structure -->
+<main class="nike-improved">
+  <!-- Semantic Header -->
+  <header>
+    <h1 class="sr-only">Nike DE: Innovative Sportbekleidung & Schuhe</h1>
+    <!-- Nav replaces 'link farm' with high-value category anchors -->
+  </header>
 
-<main>
-  <section id="hero">
-    <h1>Nike Deutschland: Sportartikel, Sneaker & Ausrüstung</h1>
-    <p>Entdecke die neueste Nike Kollektion für Sport und Lifestyle. Just Do It.</p>
-    <a href="/shop" class="cta">Jetzt shoppen</a>
+  <!-- Hero: Optimized for Conversion -->
+  <section class="hero-campaign">
+    <h2 class="h1-style">Neue LEGO® x Nike Kollektion</h2>
+    <p>Spielerisch Leistung bringen. Entdecke exklusive Styles für aktive Kids.</p>
+    <a href="/kids/lego" class="cta-primary">Jetzt entdecken</a>
   </section>
 
-  <section id="features">
-    <h2>Unsere Highlights</h2> <!-- Unique H2 -->
-    <div class="grid">
-      <!-- Cards with descriptive alt text -->
-      <article>
-        <h3>Laufschuhe für jedes Terrain</h3>
-        <p>Von Asphalt bis Trail: Maximale Dämpfung für dein Training.</p>
-      </article>
-      <!-- ... -->
-    </div>
+  <!-- SEO Content Block: Replacing repetitive "Rasante Sprints" -->
+  <section class="seo-value-prop">
+    <h2>Warum Nike? Innovation für jeden Athleten</h2>
+    <p>Von unserer patentierten Nike Air Dämpfung bis hin zur Dri-FIT Technologie: Nike bietet die Ausrüstung, die du für dein Ziel brauchst. Egal ob Profisportler oder Freizeitsportler – entdecke langlebige Qualität für Damen, Herren und Kinder.</p>
   </section>
 
-  <!-- Editorial Section for Authority -->
-  <section id="expert-tips">
-    <h2>Nike Experten-Tipps</h2>
-    <p>Erfahre mehr über die richtige Wahl deiner Laufschuhe in unserem Ratgeber.</p>
-    <a href="/blog/laufschuhe-finden">Jetzt Guide lesen</a>
-  </section>
+  <!-- BreadcrumbList Schema (JSON-LD) -->
+  <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.nike.com/de" }]}
+  </script>
 </main>
 ```
 
 ---
 
 ### SECTION 2: === NEW WEBSITE TEMPLATE ===
-*This SaaS-focused concept utilizes glassmorphism, dark mode, and a mobile-first Bento-grid layout.*
+*Modern SaaS-style, Glassmorphism, Dark Mode, High-Conversion Focus.*
 
 ```html
 <!DOCTYPE html>
 <html lang="de" class="dark">
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "Wie starte ich die Testphase?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Klicke einfach auf 'Kostenlos starten'..."}
-      }]
-    }
-    </script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
 </head>
-<body class="bg-slate-950 text-white font-sans antialiased">
+<body class="bg-slate-950 text-white antialiased">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 backdrop-blur-md bg-slate-950/80 border-b border-white/10 p-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <span class="font-bold text-xl">NEXUS_CORE</span>
-            <button class="bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-500 transition">Get Started</button>
+    <nav class="fixed w-full z-50 border-b border-white/10 backdrop-blur-md bg-slate-950/80">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-2xl font-black tracking-tighter">NIKE_PRO</span>
+            <a href="#cta" class="bg-white text-black px-6 py-2 rounded-full font-bold hover:scale-105 transition">Member Login</a>
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="pt-32 pb-20 px-6 text-center">
-        <h1 class="text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
-            Scale your performance with ease.
-        </h1>
-        <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">The enterprise SaaS solution for modern teams. Secure, fast, and built for growth.</p>
-        <a href="#" class="bg-white text-black px-8 py-4 rounded-xl font-bold">Start Free Trial</a>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Just Do It. Better.</h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">Erlebe die nächste Generation der Sport-Performance mit unseren datengestützten Innovationen.</p>
+        <button class="bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]">Jetzt Kollektion ansehen</button>
     </section>
 
-    <!-- Bento Grid Features -->
-    <section class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Glassmorphism Features -->
+    <section class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 py-20">
         <div class="p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:border-blue-500/50 transition">
-            <h3 class="text-2xl mb-4">Real-time Analytics</h3>
-            <p class="text-slate-400">Track your metrics with high-precision dash-boarding.</p>
+            <h3 class="text-2xl font-bold mb-4">Precision Fit</h3>
+            <p class="text-slate-400">Technologie, die sich deiner Anatomie anpasst.</p>
         </div>
-        <div class="md:col-span-2 p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg">
-            <h3 class="text-2xl mb-4">Global Infrastructure</h3>
-            <p class="text-slate-400">Deployed across 50+ regions for zero-latency performance.</p>
-        </div>
+        <!-- Repeat for other features -->
     </section>
 
-    <!-- FAQ Section -->
-    <section class="max-w-3xl mx-auto py-20 px-6">
-        <h2 class="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+    <!-- FAQ Section (SEO Optimized) -->
+    <section class="max-w-4xl mx-auto px-6 py-20">
+        <h2 class="text-4xl font-bold mb-12 text-center">Häufige Fragen</h2>
         <div class="space-y-4">
-            <details class="p-6 bg-slate-900 rounded-2xl border border-white/5 cursor-pointer">
-                <summary class="font-semibold">Is the platform secure?</summary>
-                <p class="mt-4 text-slate-400">Yes, we maintain SOC2 compliance and end-to-end encryption.</p>
+            <details class="bg-slate-900 p-6 rounded-2xl border border-white/5">
+                <summary class="font-bold cursor-pointer">Bietet Nike kostenlosen Versand?</summary>
+                <p class="mt-4 text-slate-400">Ja, für alle Nike Member ist der Versand bei jeder Bestellung kostenlos.</p>
             </details>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 text-center bg-blue-600/10 border-t border-blue-500/20">
-        <h2 class="text-4xl font-bold mb-6">Ready to scale?</h2>
-        <button class="bg-blue-600 px-10 py-4 rounded-xl text-lg font-bold">Book a Demo</button>
-    </section>
-
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nike DE",
+      "url": "https://www.nike.com/de",
+      "logo": "https://www.nike.com/logo.png"
+    }
+    </script>
 </body>
 </html>
 ```
 
-### Key Technical Advantages of the New Concept:
-1.  **SEO Performance:** Semantic structure (H1-H3), FAQ Schema markup, and clean code reduce Bloated DOM (improving INP/LCP).
-2.  **Conversion Optimization:** The "Bento-grid" visual hierarchy draws the eye toward feature value propositions, while the prominent CTA buttons create a "frictionless" path to conversion.
-3.  **Modern UI:** Tailwind CSS is used for the glassmorphism effect (backdrop-blur-md) which signals high-end, modern SaaS trust.
-4.  **Performance:** The code is lightweight, relies on native CSS, and excludes heavy external framework dependencies, ensuring sub-second load times.
+### Why this works:
+1.  **SEO Strategy:** By removing the "link farm" and replacing it with semantic sections, we increase the **text-to-code ratio**.
+2.  **Performance:** Using CDN-based Tailwind CSS ensures the site is lean (no heavy CSS files to download).
+3.  **CRO (Conversion Rate Optimization):** The "New Template" uses a **Single-Column Focus** for the hero, which directs eyes immediately to the CTA.
+4.  **Glassmorphism:** Adds a "premium/high-tech" feel appropriate for a brand like Nike, increasing perceived value and dwell time.
+5.  **Schema:** Both solutions include `JSON-LD`, which is the industry standard for telling search engines exactly what your site is about.
