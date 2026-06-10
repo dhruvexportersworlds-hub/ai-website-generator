@@ -4,167 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python.org - The Official Home of the Python Programming Language</title>
-    <meta name="description" content="Explore the official Python.org website for the Python programming language. Discover its features, learn how to get started, and find resources for developers of all levels.">
-    <meta name="keywords" content="Python, programming, language, software, development, learn Python, Python features, Python community">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>" type="image/svg+xml">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@700&display=swap');
-
         :root {
-            --primary-color: #007396; /* Python blue */
-            --secondary-color: #3776AB; /* Slightly darker blue */
-            --accent-color: #FFD43B; /* Yellow accent */
-            --background-color: #F8F9FA;
-            --surface-color: #FFFFFF;
-            --text-color: #212529;
-            --muted-text-color: #6C757D;
-            --footer-background: #343A40;
-            --footer-text-color: #CED4DA;
-            --gradient-start: #3498DB;
-            --gradient-end: #2980B9;
+            --primary-color: #007acc; /* Python blue */
+            --secondary-color: #ffd600; /* Python yellow */
+            --dark-blue: #0a2342;
+            --light-gray: #f4f7f6;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #555555;
+            --gradient-start: #007acc;
+            --gradient-end: #005f9e;
         }
 
-        *,
-        *::before,
-        *::after {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px; /* Base font size */
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto', 'Arial', sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+            color: var(--text-dark);
+            background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
+        h1, h2, h3 {
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             line-height: 1.3;
         }
 
-        h1 { font-size: 3.5rem; }
-        h2 { font-size: 2.5rem; }
-        h3 { font-size: 1.75rem; }
-        h4 { font-size: 1.25rem; }
+        h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+        }
 
-        p { margin-bottom: 1rem; }
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
         a {
             color: var(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         a:hover {
-            color: var(--secondary-color);
-            text-decoration: underline;
+            color: var(--gradient-end);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-align: center;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--surface-color);
-        }
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-        .btn-secondary:hover {
-            background-color: var(--primary-color);
-            color: var(--surface-color);
-            transform: translateY(-2px);
+            padding: 0 20px;
         }
 
         /* Header */
         header {
-            background-color: var(--surface-color);
+            background-color: var(--dark-blue);
+            color: var(--white);
             padding: 1.5rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 700;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
+            color: var(--white);
+            letter-spacing: 1px;
         }
-        .logo svg {
-            margin-right: 0.5rem;
-            width: 30px;
-            height: 30px;
-            fill: var(--primary-color);
-        }
+
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
         }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
         nav ul li a {
-            font-weight: 600;
-            color: var(--text-color);
+            color: var(--white);
+            font-weight: 500;
             transition: color 0.3s ease;
         }
+
         nav ul li a:hover {
-            color: var(--primary-color);
-            text-decoration: none;
+            color: var(--secondary-color);
         }
-        .mobile-menu-toggle {
+
+        .menu-toggle {
             display: none;
             font-size: 2rem;
             background: none;
             border: none;
+            color: var(--white);
             cursor: pointer;
-            color: var(--text-color);
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: var(--surface-color);
-            padding: 6rem 0;
+            color: var(--white);
             text-align: center;
+            padding: 100px 0;
             position: relative;
             overflow: hidden;
         }
+
         .hero::before {
             content: '';
             position: absolute;
@@ -172,363 +144,482 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,192L48,192C96,192,192,192,288,224L384,256L480,192L576,128L672,192L768,128L864,96L960,64L1056,160L1152,192L1248,160L1344,96L1440,64L1440,320L1344,320C1248,320,1152,320,1056,320L960,320L864,320L768,320L672,320L576,320L480,320L384,320L288,320L192,320L96,320L48,320L0,320Z"></path></svg>') bottom center no-repeat;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,128C96,160,192,224,288,234.7C384,245,480,203,576,165.3C672,128,768,96,864,96C960,96,1056,128,1152,149.3C1248,171,1344,181,1392,186.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+            background-repeat: no-repeat;
             background-size: cover;
-            opacity: 0.5;
+            background-position: center;
+            opacity: 0.2;
         }
+
         .hero h1 {
             font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
         }
+
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.4rem;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 2rem auto;
             opacity: 0.9;
         }
-        .hero .btn-primary {
-            font-size: 1.1rem;
-            padding: 1.2rem 2.8rem;
-            border-radius: 10px;
+
+        .hero .cta-buttons {
+            margin-top: 2rem;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-blue);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* Features Section */
         .features {
-            padding: 6rem 0;
-            background-color: var(--surface-color);
+            padding: 100px 0;
+            background-color: var(--light-gray);
         }
-        .features h2 {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        .features-grid {
+
+        .features .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            gap: 40px;
         }
-        .feature-card {
-            background-color: var(--surface-color);
-            border-radius: 12px;
-            padding: 2.5rem;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+        .feature-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        .feature-card .icon {
+
+        .feature-icon {
             font-size: 3rem;
             color: var(--primary-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+
+        .feature-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .feature-item p {
+            flex-grow: 1; /* Push footer down */
+        }
+
+        .feature-item .learn-more {
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 500;
             color: var(--primary-color);
+            transition: color 0.3s ease;
         }
-        .feature-card p {
-            color: var(--muted-text-color);
+
+        .feature-item .learn-more:hover {
+            color: var(--gradient-end);
         }
 
         /* Testimonials Section */
         .testimonials {
-            padding: 6rem 0;
-            background-color: var(--background-color);
+            padding: 100px 0;
+            background-color: var(--white);
         }
-        .testimonials h2 {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        .testimonial-card {
-            background-color: var(--surface-color);
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .testimonial-card .quote {
-            font-style: italic;
-            color: var(--muted-text-color);
-            margin-bottom: 1.5rem;
+
+        .testimonial-slider {
             position: relative;
-            padding-left: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
         }
-        .testimonial-card .quote::before {
-            content: '“';
-            font-size: 4rem;
+
+        .testimonial-slide {
+            text-align: center;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
             position: absolute;
+            width: 100%;
+            top: 0;
             left: 0;
-            top: -0.5rem;
-            color: var(--primary-color);
-            opacity: 0.2;
         }
-        .testimonial-card .author {
-            font-weight: 600;
-            color: var(--primary-color);
-            text-align: right;
+
+        .testimonial-slide.active {
+            opacity: 1;
+            position: relative;
         }
-        .testimonial-card .author span {
-            display: block;
-            font-size: 0.9rem;
-            color: var(--muted-text-color);
+
+        .testimonial-quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+            position: absolute;
+            line-height: 1;
+        }
+
+        .testimonial-quote::before {
+            top: -10px;
+            left: -25px;
+        }
+
+        .testimonial-quote::after {
+            bottom: -10px;
+            right: -25px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-author span {
             font-weight: 400;
+            color: var(--text-light);
+            font-size: 1rem;
         }
 
         /* FAQ Section */
         .faq {
-            padding: 6rem 0;
-            background-color: var(--surface-color);
+            padding: 100px 0;
+            background-color: var(--light-gray);
         }
-        .faq h2 {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        .faq-accordion {
+
+        .faq-items {
             max-width: 800px;
             margin: 0 auto;
-            border: 1px solid #E9ECEF;
-            border-radius: 12px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
             overflow: hidden;
         }
-        .faq-item {
-            border-bottom: 1px solid #E9ECEF;
-        }
-        .faq-item:last-child {
-            border-bottom: none;
-        }
+
         .faq-question {
-            background-color: var(--surface-color);
-            padding: 1.5rem 2rem;
-            cursor: pointer;
+            background-color: var(--white);
+            padding: 20px;
+            font-size: 1.3rem;
             font-weight: 600;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: background-color 0.3s ease;
         }
+
         .faq-question:hover {
-            background-color: #F1F3F5;
+            background-color: var(--light-gray);
         }
-        .faq-question i {
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
             transition: transform 0.3s ease;
         }
+
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+
         .faq-answer {
+            background-color: var(--white);
+            padding: 20px;
+            font-size: 1.1rem;
+            color: var(--text-light);
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-            background-color: var(--background-color);
-            padding: 0 2rem;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
         }
-        .faq-answer p {
-            padding: 1.5rem 0;
-            color: var(--muted-text-color);
-        }
-        .faq-item.open .faq-question {
-            background-color: #E9ECEF;
-        }
-        .faq-item.open .faq-question i {
-            transform: rotate(45deg);
+
+        .faq-item.open .faq-answer {
+            max-height: 200px; /* Adjust as needed */
+            padding: 20px;
         }
 
         /* Contact Section */
         .contact {
-            padding: 6rem 0;
-            background-color: var(--background-color);
-        }
-        .contact h2 {
+            padding: 100px 0;
+            background-color: var(--white);
             text-align: center;
-            margin-bottom: 4rem;
         }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
         }
+
+        .contact-text {
+            flex: 1;
+            text-align: left;
+            min-width: 300px;
+        }
+
         .contact-form {
-            background-color: var(--surface-color);
-            border-radius: 12px;
-            padding: 3rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            min-width: 300px;
+            text-align: left;
         }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #CED4DA;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            background-color: var(--white);
         }
+
         .contact-form textarea {
             min-height: 150px;
             resize: vertical;
         }
-        .contact-form .btn-primary {
-            width: 100%;
-            font-size: 1.1rem;
-            padding: 1.2rem;
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-        .contact-info {
-            text-align: center;
-        }
-        .contact-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        .contact-info p {
-            color: var(--muted-text-color);
-            margin-bottom: 1rem;
-        }
-        .contact-info a {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-        .contact-info .social-links {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-        .contact-info .social-links a {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            transition: color 0.3s ease;
-        }
-        .contact-info .social-links a:hover {
-            color: var(--secondary-color);
-            text-decoration: none;
+
+        .contact-form button:hover {
+            background-color: var(--gradient-end);
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background-color: var(--footer-background);
-            color: var(--footer-text-color);
-            padding: 4rem 0;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 50px 0 20px 0;
+            text-align: center;
             font-size: 0.9rem;
         }
+
         footer .container {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        footer .logo {
-            color: var(--surface-color);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-        footer .logo svg {
-            fill: var(--surface-color);
-        }
-        footer p {
-            margin-bottom: 1rem;
-        }
-        footer .footer-links {
+
+        .footer-links ul {
             list-style: none;
             display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
         }
-        footer .footer-links a {
-            color: var(--footer-text-color);
-            transition: color 0.3s ease;
+
+        .footer-links a {
+            color: var(--white);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
         }
-        footer .footer-links a:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
+
+        .footer-links a:hover {
+            opacity: 1;
         }
-        footer .copyright {
+
+        .copyright {
+            margin-top: 20px;
             opacity: 0.7;
         }
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            h1 { font-size: 3rem; }
-            h2 { font-size: 2rem; }
-            .hero { padding: 4rem 0; }
-            .hero h1 { font-size: 3.5rem; }
-            .hero p { font-size: 1.1rem; }
-            .features, .testimonials, .faq, .contact { padding: 4rem 0; }
-            .features-grid, .testimonials-grid, .contact-grid {
-                grid-template-columns: 1fr;
+            h1 {
+                font-size: 3rem;
             }
-            .contact-grid {
-                gap: 2rem;
+
+            h2 {
+                font-size: 2rem;
             }
-            .container {
-                padding: 0 1.5rem;
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .feature-item {
+                padding: 25px;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .contact-form {
+                width: 100%;
             }
         }
 
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
             nav ul {
-                display: none; /* Hide desktop nav on mobile */
+                display: none;
                 flex-direction: column;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--surface-color);
-                padding: 2rem;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                background-color: var(--dark-blue);
+                padding: 20px 0;
+                text-align: center;
             }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
             nav ul.active {
                 display: flex;
             }
-            nav ul li {
-                margin-bottom: 1rem;
+
+            .hero {
+                padding: 80px 0;
             }
-            .mobile-menu-toggle {
-                display: block;
+
+            .hero h1 {
+                font-size: 2.8rem;
             }
-            header .container {
-                padding: 1rem 1.5rem;
+
+            .hero p {
+                font-size: 1.1rem;
             }
-            .logo {
-                font-size: 1.5rem;
+
+            .hero .cta-button {
+                padding: 12px 25px;
+                font-size: 1.1rem;
+                margin: 5px;
             }
-            .logo svg {
-                width: 25px;
-                height: 25px;
+
+            .features, .testimonials, .faq, .contact {
+                padding: 60px 0;
             }
-            .hero h1 { font-size: 2.8rem; }
-            .hero p { font-size: 1rem; }
-            .feature-card, .testimonial-card, .contact-form {
-                padding: 2rem;
+
+            .features .container {
+                grid-template-columns: 1fr;
             }
-            footer .footer-links {
+
+            .testimonial-quote {
+                font-size: 1.3rem;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+            }
+
+            footer .container {
                 flex-direction: column;
-                gap: 1rem;
+            }
+
+            .footer-links ul {
+                margin-top: 15px;
             }
         }
 
-        @media (max-width: 576px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
-            .hero { padding: 3rem 0; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 0.95rem; }
-            .btn { padding: 0.8rem 1.5rem; }
-            .features, .testimonials, .faq, .contact { padding: 3rem 0; }
-            .feature-card, .testimonial-card, .contact-form {
-                padding: 1.5rem;
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
             }
-            .feature-card .icon { font-size: 2.5rem; }
-            .testimonial-card .quote::before { font-size: 3rem; }
-            .contact-grid {
-                grid-template-columns: 1fr;
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero .cta-button {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+
+            .feature-item {
+                padding: 20px;
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+
+            .testimonial-quote::before,
+            .testimonial-quote::after {
+                font-size: 2.5rem;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 12px;
+            }
+
+            .contact-form button {
+                padding: 12px 25px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -537,18 +628,8 @@
 
     <header>
         <div class="container">
-            <a href="#" class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.7 35.5">
-                    <path fill="#3776AB" d="M15.9,0.2C7.1,0.2,0,7.4,0,16.2c0,8.8,7.1,15.9,15.9,15.9c8.8,0,15.9-7.1,15.9-15.9C31.7,7.4,24.7,0.2,15.9,0.2z M15.9,28.3c-6.6,0-12-5.4-12-12c0-6.6,5.4-12,12-12c6.6,0,12,5.4,12,12C27.9,22.9,22.5,28.3,15.9,28.3z"/>
-                    <path fill="#3776AB" d="M15.9,9.5c-1.9,0-3.4,1.5-3.4,3.4s1.5,3.4,3.4,3.4c1.9,0,3.4-1.5,3.4-3.4S17.8,9.5,15.9,9.5z"/>
-                    <path fill="#3776AB" d="M7.7,16.2c0-1.9,1.5-3.4,3.4-3.4c1.9,0,3.4,1.5,3.4,3.4s-1.5,3.4-3.4,3.4C9.2,19.6,7.7,18.1,7.7,16.2z"/>
-                    <path fill="#3776AB" d="M24.1,16.2c0-1.9,1.5-3.4,3.4-3.4c1.9,0,3.4,1.5,3.4,3.4s-1.5,3.4-3.4,3.4C25.6,19.6,24.1,18.1,24.1,16.2z"/>
-                    <path fill="#FFD43B" d="M15.9,11.4c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4S16.7,11.4,15.9,11.4z"/>
-                    <path fill="#FFD43B" d="M9.1,17.7c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4S9.9,17.7,9.1,17.7z"/>
-                    <path fill="#FFD43B" d="M22.7,17.7c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4S23.5,17.7,22.7,17.7z"/>
-                </svg>
-                Python
-            </a>
+            <a href="/" class="logo">Python</a>
+            <button class="menu-toggle">☰</button>
             <nav>
                 <ul>
                     <li><a href="#features">Features</a></li>
@@ -556,193 +637,223 @@
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>The Official Home of the Python Programming Language</h1>
-            <p>Discover Python's power: elegant syntax, vast libraries, and a vibrant community. Build anything you can imagine.</p>
-            <a href="#features" class="btn btn-primary">Explore Features</a>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Why Choose Python?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="icon">🐍</div>
-                    <h3>Intuitive Interpretation</h3>
-                    <p>Python's clear, readable syntax makes it easy to understand and write code, allowing you to focus on solving problems rather than on complex syntax.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">📚</div>
-                    <h3>Compound Data Types</h3>
-                    <p>Leverage powerful built-in data structures like lists, tuples, dictionaries, and sets to efficiently organize and manipulate your data.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">⚙️</div>
-                    <h3>All the Flow You’d Expect</h3>
-                    <p>Master control flow with familiar constructs like loops, conditionals, and exception handling, enabling robust and logical program execution.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">🚀</div>
-                    <h3>Functions Defined</h3>
-                    <p>Organize your code into reusable blocks with functions, promoting modularity and making your programs easier to maintain and scale.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">💡</div>
-                    <h3>Quick & Easy to Learn</h3>
-                    <p>With its beginner-friendly nature and extensive documentation, Python is the ideal language for those new to programming and seasoned developers alike.</p>
+    <main>
+        <section class="hero" id="hero">
+            <div class="container">
+                <h1>The Official Home of the <br> Python Programming Language</h1>
+                <p>Python is a powerful, expressive, and versatile programming language that is easy to learn and fun to use. It's a popular choice for web development, data science, artificial intelligence, and much more.</p>
+                <div class="cta-buttons">
+                    <a href="#features" class="cta-button">Explore Features</a>
+                    <a href="#contact" class="cta-button">Get Started</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Our Users Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="quote">"Python transformed my workflow. Its simplicity and the massive ecosystem of libraries have been a game-changer for data analysis."</p>
-                    <div class="author">— Dr. Anya Sharma<span>Data Scientist</span></div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="quote">"From web development to automation, Python's versatility is unmatched. The community support is incredible!"</p>
-                    <div class="author">— Ben Carter<span>Software Engineer</span></div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="quote">"As a beginner, Python was the perfect entry point. I was building functional applications within weeks, thanks to its clear structure."</p>
-                    <div class="author">— Chloe Lee<span>Aspiring Developer</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <div class="faq-question">What is Python used for? <i class="fas fa-plus"></i></div>
-                    <div class="faq-answer">
-                        <p>Python is incredibly versatile and used for web development, data science, artificial intelligence, machine learning, automation, scientific computing, game development, and much more.</p>
+        <section class="features" id="features">
+            <div class="container">
+                <h2>Key Python Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🐍</div>
+                        <h3>Intuitive Interpretation</h3>
+                        <p>Python's clear and readable syntax allows for faster development cycles. It's like writing in plain English, making complex logic easy to understand and implement.</p>
+                        <a href="#" class="learn-more">Learn More &rarr;</a>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Is Python free to use? <i class="fas fa-plus"></i></div>
-                    <div class="faq-answer">
-                        <p>Yes, Python is open-source and free to use for both personal and commercial purposes. You can download it from python.org.</p>
+                    <div class="feature-item">
+                        <div class="feature-icon">📚</div>
+                        <h3>Compound Data Types</h3>
+                        <p>Python offers powerful built-in data structures like lists, tuples, dictionaries, and sets, simplifying the handling of complex data collections.</p>
+                        <a href="#" class="learn-more">Learn More &rarr;</a>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">How do I install Python? <i class="fas fa-plus"></i></div>
-                    <div class="faq-answer">
-                        <p>You can download the latest version of Python from the official website (python.org) and follow the installation instructions for your operating system (Windows, macOS, Linux).</p>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h3>All the Flow You’d Expect</h3>
+                        <p>Control flow statements like `if`, `elif`, `else`, `for`, and `while` are standard and easy to use, providing robust logic capabilities.</p>
+                        <a href="#" class="learn-more">Learn More &rarr;</a>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What are the prerequisites for learning Python? <i class="fas fa-plus"></i></div>
-                    <div class="faq-answer">
-                        <p>No prior programming experience is strictly required. A logical mindset and a willingness to learn are the most important prerequisites. Familiarity with basic computer operations is helpful.</p>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Functions Defined</h3>
+                        <p>Organize your code into reusable blocks with functions. Python's function definition is straightforward, promoting modularity and efficiency.</p>
+                        <a href="#" class="learn-more">Learn More &rarr;</a>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💡</div>
+                        <h3>Quick & Easy to Learn</h3>
+                        <p>With a gentle learning curve and extensive community support, Python is an excellent choice for beginners and experienced developers alike.</p>
+                        <a href="#" class="learn-more">Learn More &rarr;</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-form">
-                    <form action="#" method="post">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h3>Connect with the Python Community</h3>
-                    <p>For support, discussions, and contributions, explore our vibrant community channels.</p>
-                    <p>Visit our <a href="#">forums</a> or find local <a href="#">user groups</a>.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Python on Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Python on GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="Python on Reddit"><i class="fab fa-reddit"></i></a>
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2>What Our Users Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide active">
+                        <p class="testimonial-quote">"Python has revolutionized how we approach data analysis. Its simplicity and the vast ecosystem of libraries make complex tasks manageable and enjoyable."</p>
+                        <p class="testimonial-author">- Dr. Anya Sharma, Lead Data Scientist<span> at Innovate Solutions</span></p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p class="testimonial-quote">"As a beginner, Python was my gateway into programming. The community support and clear documentation were invaluable in getting me started."</p>
+                        <p class="testimonial-author">- Ben Carter, Aspiring Developer<span></span></p>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p class="testimonial-quote">"From web applications to machine learning models, Python's flexibility is unmatched. It's the backbone of many of our innovative projects."</p>
+                        <p class="testimonial-author">- Maria Rodriguez, Senior Software Engineer<span> at TechForward Inc.</span></p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <div class="faq-question">What is Python used for?</div>
+                        <div class="faq-answer">Python is incredibly versatile and used for web development, data science, AI and machine learning, automation, game development, scientific computing, and much more.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is Python difficult to learn?</div>
+                        <div class="faq-answer">Python is renowned for its readability and simple syntax, making it one of the easiest programming languages for beginners to learn.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do I need to pay for Python?</div>
+                        <div class="faq-answer">No, Python is free and open-source. You can download and use it without any licensing fees.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are Python's main advantages?</div>
+                        <div class="faq-answer">Key advantages include its readability, extensive libraries, large community support, cross-platform compatibility, and versatility across various domains.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions, a project idea, or want to contribute to the Python community? We'd love to hear from you!</p>
+                        <p>You can also find extensive documentation and community forums on our website.</p>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <a href="#" class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.7 35.5">
-                    <path fill="#FFFFFF" d="M15.9,0.2C7.1,0.2,0,7.4,0,16.2c0,8.8,7.1,15.9,15.9,15.9c8.8,0,15.9-7.1,15.9-15.9C31.7,7.4,24.7,0.2,15.9,0.2z M15.9,28.3c-6.6,0-12-5.4-12-12c0-6.6,5.4-12,12-12c6.6,0,12,5.4,12,12C27.9,22.9,22.5,28.3,15.9,28.3z"/>
-                    <path fill="#FFFFFF" d="M15.9,9.5c-1.9,0-3.4,1.5-3.4,3.4s1.5,3.4,3.4,3.4c1.9,0,3.4-1.5,3.4-3.4S17.8,9.5,15.9,9.5z"/>
-                    <path fill="#FFFFFF" d="M7.7,16.2c0-1.9,1.5-3.4,3.4-3.4c1.9,0,3.4,1.5,3.4,3.4s-1.5,3.4-3.4,3.4C9.2,19.6,7.7,18.1,7.7,16.2z"/>
-                    <path fill="#FFFFFF" d="M24.1,16.2c0-1.9,1.5-3.4,3.4-3.4c1.9,0,3.4,1.5,3.4,3.4s-1.5,3.4-3.4,3.4C25.6,19.6,24.1,18.1,24.1,16.2z"/>
-                    <path fill="#212529" d="M15.9,11.4c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4S16.7,11.4,15.9,11.4z"/>
-                    <path fill="#212529" d="M9.1,17.7c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4S9.9,17.7,9.1,17.7z"/>
-                    <path fill="#212529" d="M22.7,17.7c-0.8,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4S23.5,17.7,22.7,17.7z"/>
-                </svg>
-                Python.org
-            </a>
-            <p>&copy; 2023 Python Software Foundation. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Docs</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+            </div>
+            <div class="copyright">&copy; 2023 Python Software Foundation. All rights reserved.</div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navUl = document.querySelector('header nav ul');
-            const faqQuestions = document.querySelectorAll('.faq-question');
+            // Mobile Menu Toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navUl = document.querySelector('nav ul');
 
-            mobileMenuToggle.addEventListener('click', function() {
-                navUl.classList.toggle('active');
-            });
+            if (menuToggle && navUl) {
+                menuToggle.addEventListener('click', () => {
+                    navUl.classList.toggle('active');
+                });
+            }
 
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const faqItem = this.parentElement;
-                    const faqAnswer = faqItem.querySelector('.faq-answer');
-                    const icon = this.querySelector('i');
-
-                    faqItem.classList.toggle('open');
-
-                    if (faqItem.classList.contains('open')) {
-                        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
-                        icon.classList.remove('fa-plus');
-                        icon.classList.add('fa-minus');
-                    } else {
-                        faqAnswer.style.maxHeight = null;
-                        icon.classList.remove('fa-minus');
-                        icon.classList.add('fa-plus');
+            // Smooth Scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu if open
+                        if (navUl && navUl.classList.contains('active')) {
+                            navUl.classList.remove('active');
+                        }
                     }
                 });
             });
 
-            // Close mobile menu when a link is clicked
-            navUl.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navUl.classList.remove('active');
+            // Testimonial Slider
+            const slides = document.querySelectorAll('.testimonial-slide');
+            let currentSlide = 0;
+            const slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('open');
+                });
+            });
+
+            // Simple Form Submission Handler (for demonstration)
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you shortly.');
+                    contactForm.reset(); // Reset the form
+                });
+            }
+
+            // Active Link Highlighting based on scroll
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 50; // 50px offset for header
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active-link');
+                    }
                 });
             });
         });
     </script>
-    <!-- Font Awesome for icons - Included directly for simplicity, in a real project, this would be linked -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </body>
 </html>
