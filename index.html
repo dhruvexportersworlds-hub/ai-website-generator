@@ -1,644 +1,164 @@
-===HTML===
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusAI | Future of Workflow Automation</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Welcome to Python.org</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: #0077cc 3px solid;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 15px;
+        }
+        nav a:hover {
+            color: #0077cc;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            color: #0077cc;
+            margin-top: 0;
+        }
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .quick-links a {
+            background: #0077cc;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .quick-links a:hover {
+            background: #005fa3;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .psf-logo {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Header / Navigation -->
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">NEXUS<span>AI</span></a>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="btn btn-primary">Get Started</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i data-lucide="menu"></i>
-            </div>
-        </nav>
+    <header>
+        <h1>Python.org</h1>
+        <p>The official home of the Python Programming Language</p>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero container">
-            <div class="hero-content">
-                <span class="badge">v2.0 is now live</span>
-                <h1>Intelligence that moves at the speed of <span>your business.</span></h1>
-                <p>Automate complex workflows, gain deep actionable insights, and scale your operations with our enterprise-grade AI platform.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Start Free Trial</a>
-                    <a href="#" class="btn btn-secondary">Watch Demo <i data-lucide="play-circle"></i></a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="glass-card main-card">
-                    <div class="card-header">
-                        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
-                    </div>
-                    <div class="card-body">
-                        <div class="skeleton-line"></div>
-                        <div class="skeleton-line short"></div>
-                        <div class="chart-mockup">
-                            <div class="bar" style="height: 60%"></div>
-                            <div class="bar" style="height: 80%"></div>
-                            <div class="bar" style="height: 40%"></div>
-                            <div class="bar" style="height: 90%"></div>
-                        </div>
-                    </div>
-                </div>
+    <nav>
+        <a href="#">About</a>
+        <a href="#">Tutorials</a>
+        <a href="#">Documentation</a>
+        <a href="#">Community</a>
+        <a href="#">News</a>
+        <a href="#">Jobs</a>
+        <a href="#">Community</a>
+    </nav>
+
+    <div class="container">
+        <section id="features">
+            <h2>Key Features</h2>
+            <div class="quick-links">
+                <a href="#">Intuitive Interpretation</a>
+                <a href="#">Compound Data Types</a>
+                <a href="#">All the Flow You’d Expect</a>
+                <a href="#">Functions Defined</a>
+                <a href="#">Quick & Easy to Learn</a>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="features container">
-            <div class="section-header">
-                <h2>Why choose NexusAI?</h2>
-                <p>Designed for modern teams who demand performance and security.</p>
-            </div>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <i data-lucide="zap"></i>
-                    <h3>Lightning Fast</h3>
-                    <p>Process millions of data points in milliseconds with our proprietary edge engine.</p>
-                </div>
-                <div class="feature-card">
-                    <i data-lucide="shield-check"></i>
-                    <h3>Bank-Grade Security</h3>
-                    <p>SOC2 Type II compliant with end-to-end encryption for all your sensitive data.</p>
-                </div>
-                <div class="feature-card">
-                    <i data-lucide="layers"></i>
-                    <h3>Seamless Integration</h3>
-                    <p>Connect with over 200+ tools including Slack, Salesforce, and AWS out of the box.</p>
-                </div>
+        <section id="get-started">
+            <h2>Get Started</h2>
+            <div class="quick-links">
+                <a href="#">Download</a>
+                <a href="#">Docs</a>
+                <a href="#">Jobs</a>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="services">
-            <div class="container">
-                <div class="services-wrapper">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000" alt="Dashboard Preview">
-                    </div>
-                    <div class="service-content">
-                        <h2>Advanced Managed Services</h2>
-                        <div class="service-item">
-                            <div class="service-icon"><i data-lucide="cpu"></i></div>
-                            <div>
-                                <h4>Custom AI Training</h4>
-                                <p>We build and train models specific to your niche and internal datasets.</p>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-icon"><i data-lucide="users"></i></div>
-                            <div>
-                                <h4>Dedicated Support</h4>
-                                <p>Get a dedicated solutions engineer to help you scale your infrastructure.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section id="news-events">
+            <h2>Latest Updates</h2>
+            <div class="quick-links">
+                <a href="#">Latest News</a>
+                <a href="#">Upcoming Events</a>
+                <a href="#">Success Stories</a>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="testimonials container">
-            <div class="testimonial-card">
-                <p class="quote">"NexusAI transformed our data processing from a 3-day manual task to a 5-minute automated workflow. The ROI was immediate."</p>
-                <div class="user">
-                    <div class="avatar">SC</div>
-                    <div>
-                        <strong>Sarah Chen</strong>
-                        <span>CTO at FinTech Global</span>
-                    </div>
-                </div>
+        <section id="use-python">
+            <h2>Use Python for…</h2>
+            <p>Python is a versatile language used for web development, data science, artificial intelligence, scientific computing, automation, and much more.</p>
+            <div class="quick-links">
+                <a href="#">Web Development</a>
+                <a href="#">Data Science</a>
+                <a href="#">AI & Machine Learning</a>
+                <a href="#">Automation</a>
+                <a href="#">Scientific Computing</a>
             </div>
         </section>
+    </div>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="faq container">
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">How does pricing work? <i data-lucide="chevron-down"></i></div>
-                    <div class="faq-answer">We offer flexible usage-based pricing designed to scale with your business needs.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Can I migrate from legacy systems? <i data-lucide="chevron-down"></i></div>
-                    <div class="faq-answer">Yes, our migration team provides white-glove service to move your data without downtime.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Form -->
-        <section id="contact" class="contact container">
-            <div class="contact-card">
-                <div class="contact-info">
-                    <h2>Ready to revolutionize your workflow?</h2>
-                    <p>Book a personalized demo with our solution architects today.</p>
-                </div>
-                <form class="contact-form" id="mainForm">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Work Email" required>
-                    <textarea placeholder="Tell us about your project" rows="4"></textarea>
-                    <button type="submit" class="btn btn-primary btn-block">Request Access</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">NEXUS<span>AI</span></a>
-                <p>Building the foundation for the next generation of intelligent software.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Product</h4>
-                <a href="#">Changelog</a>
-                <a href="#">Documentation</a>
-                <a href="#">Pricing</a>
-            </div>
-            <div class="footer-links">
-                <h4>Company</h4>
-                <a href="#">About</a>
-                <a href="#">Blog</a>
-                <a href="#">Careers</a>
-            </div>
-            <div class="footer-links">
-                <h4>Social</h4>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-            </div>
-        </div>
-        <div class="footer-bottom container">
-            <p>&copy; 2023 NexusAI Inc. All rights reserved.</p>
-        </div>
+    <footer>
+        <p>&copy; 2023 Python Software Foundation. All rights reserved.</p>
+        <p>
+            <span class="psf-logo">Python Software Foundation</span>
+            <a href="#">[psf]</a>
+        </p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
-
-===CSS===
-:root {
-    --primary: #6366f1;
-    --primary-hover: #4f46e5;
-    --dark: #0f172a;
-    --light: #f8fafc;
-    --gray: #64748b;
-    --glass: rgba(255, 255, 255, 0.03);
-    --border: rgba(255, 255, 255, 0.1);
-    --container: 1200px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--dark);
-    color: var(--light);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Typography */
-h1 { font-size: 4rem; line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem; }
-h1 span { background: linear-gradient(90deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-p { color: var(--gray); font-size: 1.1rem; }
-
-/* Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-    gap: 0.5rem;
-}
-
-.btn-primary { background: var(--primary); color: white; }
-.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
-.btn-secondary { background: var(--glass); color: white; border: 1px solid var(--border); }
-.btn-secondary:hover { background: rgba(255,255,255,0.1); }
-.btn-block { width: 100%; justify-content: center; }
-
-/* Navigation */
-.header {
-    padding: 1.5rem 0;
-    position: sticky;
-    top: 0;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid var(--border);
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    letter-spacing: -1px;
-}
-
-.logo span { color: var(--primary); }
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--gray);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover { color: white; }
-
-.menu-toggle { display: none; cursor: pointer; }
-
-/* Hero */
-.hero {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    align-items: center;
-    padding: 8rem 2rem;
-    gap: 4rem;
-}
-
-.badge {
-    background: rgba(99, 102, 241, 0.1);
-    color: var(--primary);
-    padding: 0.4rem 1rem;
-    border-radius: 100px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 1rem;
-    border: 1px solid rgba(99, 102, 241, 0.2);
-}
-
-.hero-btns { display: flex; gap: 1rem; margin-top: 2rem; }
-
-.hero-visual {
-    position: relative;
-}
-
-.glass-card {
-    background: var(--glass);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-.chart-mockup {
-    display: flex;
-    align-items: flex-end;
-    gap: 10px;
-    height: 150px;
-    margin-top: 2rem;
-}
-
-.bar {
-    flex: 1;
-    background: var(--primary);
-    border-radius: 4px 4px 0 0;
-    animation: grow 1.5s ease-out;
-}
-
-@keyframes grow { from { height: 0; } }
-
-.skeleton-line {
-    height: 10px;
-    background: var(--border);
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-.skeleton-line.short { width: 60%; }
-
-/* Features */
-.features { padding: 6rem 2rem; }
-.section-header { text-align: center; margin-bottom: 4rem; }
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.feature-card {
-    padding: 3rem 2rem;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    transition: transform 0.3s;
-}
-
-.feature-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.05); }
-
-.feature-card i {
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    width: 32px;
-    height: 32px;
-}
-
-/* Services */
-.services { background: rgba(255,255,255,0.02); padding: 6rem 0; }
-.services-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.service-image img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-
-.service-item {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.service-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--primary);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-/* Testimonials */
-.testimonials { padding: 6rem 2rem; text-align: center; }
-.testimonial-card {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 4rem;
-    background: linear-gradient(145deg, rgba(99,102,241,0.05), rgba(0,0,0,0));
-    border-radius: 30px;
-}
-
-.quote { font-size: 1.8rem; color: white; font-style: italic; margin-bottom: 2rem; }
-
-.user { display: flex; align-items: center; justify-content: center; gap: 1rem; text-align: left; }
-.avatar {
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-}
-
-/* FAQ */
-.faq { padding: 6rem 2rem; max-width: 800px; }
-.faq-item {
-    border-bottom: 1px solid var(--border);
-    padding: 1.5rem 0;
-    cursor: pointer;
-}
-
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, margin 0.3s ease;
-    color: var(--gray);
-}
-
-.faq-item.active .faq-answer {
-    max-height: 100px;
-    margin-top: 1rem;
-}
-
-.faq-item.active i { transform: rotate(180deg); transition: 0.3s; }
-
-/* Contact */
-.contact { padding: 6rem 2rem; }
-.contact-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--primary);
-    border-radius: 24px;
-    overflow: hidden;
-}
-
-.contact-info { padding: 4rem; background: #4f46e5; }
-.contact-info h2 { color: white; }
-.contact-info p { color: #c7d2fe; }
-
-.contact-form { padding: 4rem; background: white; display: flex; flex-direction: column; gap: 1rem; }
-.contact-form input, .contact-form textarea {
-    padding: 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-/* Footer */
-.footer {
-    padding: 6rem 0 2rem;
-    border-top: 1px solid var(--border);
-    margin-top: 4rem;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 4rem;
-}
-
-.footer-brand p { margin-top: 1rem; max-width: 250px; }
-.footer-links h4 { margin-bottom: 1.5rem; color: white; }
-.footer-links a {
-    display: block;
-    color: var(--gray);
-    text-decoration: none;
-    margin-bottom: 0.8rem;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover { color: var(--primary); }
-
-.footer-bottom {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-/* Mobile Responsive */
-@media (max-width: 992px) {
-    h1 { font-size: 3rem; }
-    .hero, .services-wrapper, .contact-card { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .hero-visual { order: -1; }
-}
-
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .menu-toggle { display: block; }
-    .contact-info, .contact-form { padding: 2rem; }
-}
-
-===JS===
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lucide icons
-    lucide.createIcons();
-
-    // Sticky Header Effect
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.padding = '1rem 0';
-            header.style.background = 'rgba(15, 23, 42, 0.95)';
-        } else {
-            header.style.padding = '1.5rem 0';
-            header.style.background = 'rgba(15, 23, 42, 0.8)';
-        }
-    });
-
-    // FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all items
-            faqItems.forEach(i => i.classList.remove('active'));
-            
-            // Toggle clicked item
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
-    });
-
-    // Mobile Menu Toggle (Simplified)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        if(navLinks.style.display === 'flex') {
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.width = '100%';
-            navLinks.style.background = '#0f172a';
-            navLinks.style.padding = '2rem';
-            navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
-        }
-    });
-
-    // Form Submission Handling
-    const contactForm = document.getElementById('mainForm');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = contactForm.querySelector('button');
-        const originalText = btn.innerHTML;
-        
-        btn.innerText = 'Sending...';
-        btn.disabled = true;
-
-        // Simulate API call
-        setTimeout(() => {
-            btn.innerText = 'Success! We\'ll contact you.';
-            btn.style.background = '#10b981';
-            contactForm.reset();
-            
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
-                btn.disabled = false;
-            }, 3000);
-        }, 1500);
-    });
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.feature-card, .service-item, .testimonial-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.6s ease-out';
-        observer.observe(el);
-    });
-});
+```
