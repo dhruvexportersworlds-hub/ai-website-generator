@@ -4,107 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nike Deutschland: Sportbekleidung, Schuhe & Sneaker online kaufen</title>
-    <meta name="description" content="Entdecke innovative Sportbekleidung, Performance-Laufschuhe und exklusive Sneaker bei Nike Deutschland. Werde Member für exklusiven Zugang.">
+    <title>Nike Deutschland: Dein Onlineshop für Sportbekleidung, Schuhe & Ausrüstung</title>
+    <meta name="description" content="Willkommen im Nike Deutschland Onlineshop. Entdecke innovative Sportbekleidung, Laufschuhe und Lifestyle-Sneaker. Profitiere von exklusiven Member-Vorteilen und schnellem Versand. Just Do It.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Welche Vorteile habe ich als Nike Member?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Als Nike Member profitierst du von exklusiven Produktzugängen, kostenlosem Versand ab einem bestimmten Bestellwert und speziellen Angeboten."
+        }
+      }]
+    }
+    </script>
 </head>
-<body class="bg-white text-gray-900 antialiased">
+<body class="bg-white text-slate-900 font-sans antialiased">
 
-    <!-- Navigation -->
-    <nav class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-        <div class="font-bold text-2xl tracking-tighter">NIKE</div>
-        <div class="hidden md:flex space-x-8 font-medium text-sm">
-            <a href="#" class="hover:text-gray-500">Neuheiten</a>
-            <a href="#" class="hover:text-gray-500">Herren</a>
-            <a href="#" class="hover:text-gray-500">Damen</a>
-            <a href="#" class="hover:text-gray-500">Kinder</a>
-        </div>
-        <button class="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition">Login</button>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative h-[80vh] flex items-center justify-center bg-gray-50">
-        <div class="text-center px-4">
-            <h1 class="text-6xl md:text-8xl font-black uppercase mb-6 leading-tight">Just Do It.</h1>
-            <p class="text-xl mb-8 text-gray-600">Innovation für deinen Sport. Performance für dein Leben.</p>
-            <div class="flex gap-4 justify-center">
-                <a href="#" class="bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition">Jetzt shoppen</a>
-                <a href="#" class="bg-white border border-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition">Mehr erfahren</a>
+    <!-- Sticky Header -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-black tracking-tighter">NIKE</div>
+            <div class="hidden md:flex gap-8 font-medium text-sm">
+                <a href="#" class="hover:text-blue-600">Neuheiten</a>
+                <a href="#" class="hover:text-blue-600">Herren</a>
+                <a href="#" class="hover:text-blue-600">Damen</a>
+                <a href="#" class="hover:text-blue-600">Kinder</a>
             </div>
-        </div>
+            <button class="bg-slate-900 text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-blue-600 transition">Anmelden</button>
+        </nav>
     </header>
 
-    <!-- Product Modules -->
-    <section class="max-w-7xl mx-auto py-20 px-6">
-        <h2 class="text-3xl font-bold mb-12">Innovative Sportbekleidung für Damen, Herren & Kinder</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="group cursor-pointer">
-                <div class="bg-gray-200 h-96 rounded-lg mb-4 overflow-hidden"></div>
-                <h3 class="text-xl font-bold">Performance-Laufschuhe</h3>
-                <p class="text-gray-600">Technologie für jedes Terrain.</p>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-6xl md:text-7xl font-black leading-tight mb-6">Bewegung beginnt mit Innovation.</h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg">Entdecke die neueste Kollektion für Sport und Lifestyle. Jetzt online kaufen und von schnellem Versand profitieren.</p>
+                <div class="flex gap-4">
+                    <button class="bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition">Jetzt shoppen</button>
+                    <button class="border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition">Member werden</button>
+                </div>
             </div>
-            <div class="group cursor-pointer">
-                <div class="bg-gray-200 h-96 rounded-lg mb-4 overflow-hidden"></div>
-                <h3 class="text-xl font-bold">Exklusive Sneaker</h3>
-                <p class="text-gray-600">Trends der Saison.</p>
-            </div>
-            <div class="group cursor-pointer">
-                <div class="bg-gray-200 h-96 rounded-lg mb-4 overflow-hidden"></div>
-                <h3 class="text-xl font-bold">Fußball-Innovation</h3>
-                <p class="text-gray-600">Von der Arena auf den Platz.</p>
+            <div class="bg-slate-200 h-[500px] rounded-3xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=1000" alt="Nike Schuhe" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
-    <!-- Nike Expertise (SEO Content Layer) -->
-    <section class="bg-gray-50 py-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8">Warum bei Nike kaufen?</h2>
-            <p class="text-lg text-gray-700 mb-6">
-                Bei Nike Deutschland kombinieren wir jahrzehntelange Erfahrung mit modernster Materialwissenschaft. Ob du Laufschuhe für dein tägliches Training suchst oder die neueste Sportbekleidung mit Dri-FIT Technologie – wir bieten dir Qualität, die inspiriert. Werde jetzt <strong>Nike Member</strong> für exklusiven Zugang zu Neuerscheinungen und kostenlose Rücksendung.
-            </p>
-            
-            <div class="space-y-4">
-                <details class="group bg-white p-6 rounded-xl border border-gray-200">
-                    <summary class="font-bold cursor-pointer list-none">Wie finde ich die richtige Nike Schuhgröße?</summary>
-                    <p class="mt-4 text-gray-600">Nutze unseren digitalen Größenberater auf der Produktseite, um basierend auf deinem Fußprofil die perfekte Passform zu finden.</p>
-                </details>
-                <details class="group bg-white p-6 rounded-xl border border-gray-200">
-                    <summary class="font-bold cursor-pointer list-none">Vorteile der Nike Membership?</summary>
-                    <p class="mt-4 text-gray-600">Exklusive Rabatte, früher Zugang zu Sneaker-Releases und kostenlose Lieferung bei jeder Bestellung.</p>
-                </details>
+    <!-- Trust Bar -->
+    <section class="py-10 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><span class="block font-bold">🚀 Schneller Versand</span></div>
+            <div><span class="block font-bold">↩️ 30 Tage Rückgabe</span></div>
+            <div><span class="block font-bold">💎 Original Qualität</span></div>
+            <div><span class="block font-bold">✨ Member Vorteile</span></div>
+        </div>
+    </section>
+
+    <!-- SEO Intro -->
+    <section class="py-20 max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-8">Nike Deutschland: Dein Ziel für Performance & Style</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">Willkommen im Nike Deutschland Onlineshop. Hier findest du die neuesten Innovationen in den Bereichen Running, Training und Lifestyle. Ob du Profi-Athlet bist oder den perfekten Streetstyle suchst – bei uns kannst du hochwertige Nike Sportbekleidung und Schuhe bequem online kaufen.</p>
+        <p class="text-slate-600 leading-relaxed">Profitiere von exklusiven Nike Member-Vorteilen, schnellem Versand und der bewährten Nike-Qualität. Entdecke unsere aktuelle Kollektion – von ikonischen Air Max Modellen bis hin zu innovativen Fußballschuhen.</p>
+    </section>
+
+    <!-- Product Grid Hub -->
+    <section class="py-10 max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-10">Kategorien entdecken</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="group cursor-pointer p-8 bg-slate-100 rounded-2xl hover:bg-blue-600 hover:text-white transition">
+                <h3 class="text-2xl font-bold">Laufschuhe</h3>
+                <p>Maximaler Komfort für dein Training.</p>
+            </div>
+            <div class="group cursor-pointer p-8 bg-slate-100 rounded-2xl hover:bg-blue-600 hover:text-white transition">
+                <h3 class="text-2xl font-bold">Fußball</h3>
+                <p>Profiausrüstung für das Spielfeld.</p>
+            </div>
+            <div class="group cursor-pointer p-8 bg-slate-100 rounded-2xl hover:bg-blue-600 hover:text-white transition">
+                <h3 class="text-2xl font-bold">Streetwear</h3>
+                <p>Jordan & Lifestyle Klassiker.</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 text-center">
-        <h2 class="text-4xl font-black uppercase mb-6">Werde Teil der Community</h2>
-        <a href="#" class="inline-block bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-gray-800 transition">Jetzt Nike Member werden</a>
+    <!-- FAQ -->
+    <section class="py-20 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-10">Häufig gestellte Fragen (FAQ)</h2>
+        <div class="space-y-4">
+            <details class="p-6 bg-slate-50 rounded-xl cursor-pointer">
+                <summary class="font-bold">Wie werde ich Nike Member?</summary>
+                <p class="mt-4 text-slate-600">Registriere dich einfach mit deiner E-Mail-Adresse, um exklusive Vorteile und Member-Zugang zu erhalten.</p>
+            </details>
+            <details class="p-6 bg-slate-50 rounded-xl cursor-pointer">
+                <summary class="font-bold">Wie lange ist das Rückgaberecht?</summary>
+                <p class="mt-4 text-slate-600">Wir bieten ein 30-tägiges Rückgaberecht für alle unsere Produkte – ganz unkompliziert.</p>
+            </details>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-100 py-12 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-            <div>
-                <h4 class="font-bold mb-4">Produkte</h4>
-                <ul class="space-y-2 text-gray-600">
-                    <li><a href="#">Laufschuhe</a></li>
-                    <li><a href="#">Sneaker</a></li>
-                    <li><a href="#">Trainingskleidung</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-4">Unterstützung</h4>
-                <ul class="space-y-2 text-gray-600">
-                    <li><a href="#">Versand</a></li>
-                    <li><a href="#">Rückgabe</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                </ul>
-            </div>
-            <div class="col-span-2 text-gray-400 text-xs mt-8 md:mt-0">
-                © 2024 Nike, Inc. Alle Rechte vorbehalten. Deutschland.
-            </div>
+    <footer class="bg-slate-900 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+            <div><h4 class="font-bold mb-4">Support</h4><ul class="space-y-2 text-sm text-slate-400"><li>Hilfe</li><li>Versand</li><li>Rückgabe</li></ul></div>
+            <div><h4 class="font-bold mb-4">Über Nike</h4><ul class="space-y-2 text-sm text-slate-400"><li>News</li><li>Karriere</li><li>Nachhaltigkeit</li></ul></div>
         </div>
     </footer>
 
