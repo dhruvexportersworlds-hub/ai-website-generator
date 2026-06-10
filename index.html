@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Modern, responsive, and SEO-optimized website template built with Tailwind CSS and Dark Mode.">
-    <title>Modern Digital Experience | Responsive Tailwind Site</title>
+    <meta name="description" content="Modern, responsive, and SEO-optimized professional website template built with Tailwind CSS.">
+    <title>Modern Professional Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,56 +12,61 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-slate-900/70 border-b border-gray-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold tracking-tighter">BRAND<span class="text-blue-600">.</span></a>
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-2xl font-bold tracking-tight">Brand.</span>
             <div class="flex items-center gap-6">
-                <a href="#features" class="hover:text-blue-600 transition">Features</a>
-                <button onclick="document.documentElement.classList.toggle('dark')" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-800">
-                    🌓
+                <a href="#about" class="hover:text-blue-500 transition">About</a>
+                <a href="#services" class="hover:text-blue-500 transition">Services</a>
+                <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700">
+                    <span class="text-sm">Toggle Mode</span>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="py-20 md:py-32 px-6 text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-            Elevate Your Digital Presence
-        </h1>
-        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10">
-            A fully responsive, SEO-ready framework built with Tailwind CSS. Performance-focused and dark-mode ready out of the box.
+    <header class="pt-32 pb-20 px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Building the Future of Web</h1>
+        <p class="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400 mb-10">
+            We deliver high-performance, SEO-optimized, and fully responsive digital experiences tailored for your business growth.
         </p>
-        <button class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
-            Get Started
-        </button>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition">Get Started</button>
     </header>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 bg-white dark:bg-slate-800/50">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-            <div class="p-8 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-100 dark:border-slate-700">
+    <section id="services" class="py-20 bg-slate-50 dark:bg-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm">
                 <h3 class="text-xl font-bold mb-4">Responsive Design</h3>
-                <p class="text-gray-600 dark:text-gray-400">Optimized for every device from mobile phones to ultra-wide desktop monitors.</p>
+                <p class="text-slate-600 dark:text-slate-400">Optimized for every screen size, from smartphones to large desktop monitors.</p>
             </div>
-            <div class="p-8 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-100 dark:border-slate-700">
-                <h3 class="text-xl font-bold mb-4">Dark Mode Ready</h3>
-                <p class="text-gray-600 dark:text-gray-400">Seamless switching between light and dark themes for better user comfort.</p>
-            </div>
-            <div class="p-8 rounded-2xl bg-gray-50 dark:bg-slate-900 border border-gray-100 dark:border-slate-700">
+            <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm">
                 <h3 class="text-xl font-bold mb-4">SEO Optimized</h3>
-                <p class="text-gray-600 dark:text-gray-400">Semantic HTML and fast-loading assets to ensure your site ranks higher.</p>
+                <p class="text-slate-600 dark:text-slate-400">Semantic HTML and best practices to help you rank higher on search engines.</p>
+            </div>
+            <div class="p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm">
+                <h3 class="text-xl font-bold mb-4">Dark Mode Ready</h3>
+                <p class="text-slate-600 dark:text-slate-400">Modern interface aesthetics with native support for user system preferences.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 text-center border-t border-gray-200 dark:border-slate-800">
-        <p class="text-gray-500">&copy; 2023 Digital Agency. All rights reserved.</p>
+    <footer class="py-12 text-center text-slate-500 border-t border-slate-200 dark:border-slate-800">
+        <p>&copy; 2023 Brand. All rights reserved.</p>
     </footer>
 
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        toggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+        });
+    </script>
 </body>
 </html>
