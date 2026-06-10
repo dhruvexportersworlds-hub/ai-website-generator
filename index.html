@@ -3,340 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python.org - The Official Home of the Python Programming Language</title>
+    <title>Welcome to Python.org - The Official Home of the Python Programming Language</title>
+    <meta name="description" content="Explore the official website for the Python programming language. Discover its features, documentation, community, and get started with Python.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='transparent' stroke='black' stroke-width='5'/><path d='M50 10 L20 70 L80 70 Z' fill='black'/></svg>" type="image/svg+xml">
     <style>
         :root {
-            --primary-color: #007acc; /* Python blue */
-            --secondary-color: #ffd600; /* Python yellow */
-            --dark-blue: #0a2342;
+            --primary-color: #007396;
+            --secondary-color: #3776ab;
+            --dark-blue: #1f3d47;
             --light-gray: #f4f7f6;
             --white: #ffffff;
-            --text-dark: #333333;
-            --text-light: #555555;
-            --gradient-start: #007acc;
-            --gradient-end: #005f9e;
+            --text-color: #333333;
+            --heading-color: #2c3e50;
+            --footer-bg: #2c3e50;
+            --button-hover-bg: #005f7d;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Roboto', 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
+            color: var(--text-color);
             background-color: var(--white);
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 {
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
+        h1, h2, h3, h4 {
+            color: var(--heading-color);
+            margin-bottom: 0.75em;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            color: var(--white);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-        }
+        h1 { font-size: 2.8em; font-weight: 700; }
+        h2 { font-size: 2.2em; font-weight: 600; }
+        h3 { font-size: 1.8em; font-weight: 600; }
+        h4 { font-size: 1.4em; font-weight: 600; }
 
         a {
             color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color var(--transition-speed) ease;
         }
 
         a:hover {
-            color: var(--gradient-end);
+            color: var(--secondary-color);
         }
 
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         /* Header */
-        header {
-            background-color: var(--dark-blue);
-            color: var(--white);
+        .site-header {
+            background-color: var(--white);
             padding: 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        header .container {
+        .site-header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 2.2em;
             font-weight: 700;
-            color: var(--white);
-            letter-spacing: 1px;
+            color: var(--primary-color);
+            letter-spacing: -1px;
         }
 
-        nav ul {
+        .site-nav ul {
             list-style: none;
             display: flex;
         }
 
-        nav ul li {
+        .site-nav ul li {
             margin-left: 25px;
         }
 
-        nav ul li a {
-            color: var(--white);
+        .site-nav ul li a {
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 1.1em;
+            color: var(--text-color);
+            transition: color var(--transition-speed) ease;
         }
 
-        nav ul li a:hover {
-            color: var(--secondary-color);
+        .site-nav ul li a:hover {
+            color: var(--primary-color);
         }
 
-        .menu-toggle {
+        /* Mobile Menu */
+        .mobile-menu-toggle {
             display: none;
-            font-size: 2rem;
+            font-size: 2em;
             background: none;
             border: none;
-            color: var(--white);
             cursor: pointer;
+            color: var(--primary-color);
         }
 
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: var(--white);
             text-align: center;
-            padding: 100px 0;
+            padding: 6rem 0;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,128C96,160,192,224,288,234.7C384,245,480,203,576,165.3C672,128,768,96,864,96C960,96,1056,128,1152,149.3C1248,171,1344,181,1392,186.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background-image: url("data:image/svg+xml,%3Csvg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23ffffff' stop-opacity='0.1' offset='0'/%3E%3Cstop stop-color='%23000000' stop-opacity='0' offset='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='translate(0 0)'%3E%3Cpath d='M0 0 L40 40' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M40 0 L0 40' stroke='%23ffffff' stroke-width='2'/%3E%3C/pattern%3E%3Crect width='100%' height='100%' fill='url(%23b)'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: 0;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        .hero-section h1 {
+            margin-bottom: 0.5em;
+            font-size: 3.5em;
+            color: var(--white);
         }
 
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
+        .hero-section p {
+            font-size: 1.4em;
+            margin-bottom: 2em;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
             opacity: 0.9;
         }
 
-        .hero .cta-buttons {
-            margin-top: 2rem;
-        }
-
-        .hero .cta-button {
+        .cta-button {
             display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--dark-blue);
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 0 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 15px 35px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
         }
 
-        .hero .cta-button:hover {
+        .cta-button:hover {
+            background-color: var(--button-hover-bg);
+            color: var(--white);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* Features Section */
-        .features {
-            padding: 100px 0;
+        .features-section {
+            padding: 5rem 0;
             background-color: var(--light-gray);
         }
 
-        .features .container {
+        .features-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
 
-        .feature-item {
+        .feature-card {
             background-color: var(--white);
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
-        .feature-item:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .feature-icon {
-            font-size: 3rem;
+        .feature-card i { /* Placeholder for icons */
+            font-size: 3em;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
 
-        .feature-item h3 {
+        .feature-card h3 {
             margin-bottom: 15px;
-            font-size: 1.6rem;
+            font-size: 1.6em;
+            color: var(--heading-color);
         }
 
-        .feature-item p {
-            flex-grow: 1; /* Push footer down */
-        }
-
-        .feature-item .learn-more {
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: 500;
-            color: var(--primary-color);
-            transition: color 0.3s ease;
-        }
-
-        .feature-item .learn-more:hover {
-            color: var(--gradient-end);
+        .feature-card p {
+            color: #555;
+            font-size: 1.1em;
         }
 
         /* Testimonials Section */
-        .testimonials {
-            padding: 100px 0;
+        .testimonials-section {
+            padding: 5rem 0;
             background-color: var(--white);
         }
 
-        .testimonial-slider {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .testimonial-slide {
+        .testimonials-section h2 {
             text-align: center;
-            padding: 30px;
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
+            margin-bottom: 3rem;
         }
 
-        .testimonial-slide.active {
-            opacity: 1;
+        .testimonials-slider {
             position: relative;
+            overflow: hidden;
+            padding: 20px 0;
         }
 
-        .testimonial-quote {
-            font-size: 1.5rem;
+        .testimonial-item {
+            background-color: var(--light-gray);
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial-item .quote {
+            font-size: 1.3em;
             font-style: italic;
-            margin-bottom: 20px;
-            color: var(--text-light);
+            color: #444;
+            margin-bottom: 25px;
             position: relative;
+            padding: 0 30px;
         }
 
-        .testimonial-quote::before,
-        .testimonial-quote::after {
+        .testimonial-item .quote::before,
+        .testimonial-item .quote::after {
             content: '"';
-            font-size: 3rem;
+            font-size: 3em;
             color: var(--primary-color);
-            opacity: 0.3;
             position: absolute;
-            line-height: 1;
+            opacity: 0.3;
         }
 
-        .testimonial-quote::before {
-            top: -10px;
-            left: -25px;
+        .testimonial-item .quote::before {
+            top: -0.2em;
+            left: -0.1em;
         }
 
-        .testimonial-quote::after {
-            bottom: -10px;
-            right: -25px;
+        .testimonial-item .quote::after {
+            bottom: -0.4em;
+            right: -0.1em;
         }
 
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--text-dark);
-            font-size: 1.2rem;
+        .testimonial-item .author {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: var(--heading-color);
         }
 
-        .testimonial-author span {
+        .testimonial-item .author span {
+            display: block;
             font-weight: 400;
-            color: var(--text-light);
-            font-size: 1rem;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 5px;
         }
 
         /* FAQ Section */
-        .faq {
-            padding: 100px 0;
+        .faq-section {
+            padding: 5rem 0;
             background-color: var(--light-gray);
         }
 
-        .faq-items {
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-accordion {
             max-width: 800px;
             margin: 0 auto;
         }
 
         .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid #e0e0e0;
+            background-color: var(--white);
             border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: var(--card-shadow);
             overflow: hidden;
         }
 
         .faq-question {
-            background-color: var(--white);
-            padding: 20px;
-            font-size: 1.3rem;
+            padding: 20px 25px;
             font-weight: 600;
+            font-size: 1.2em;
             cursor: pointer;
+            position: relative;
+            transition: background-color var(--transition-speed) ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background-color 0.3s ease;
+            background-color: var(--white);
         }
 
         .faq-question:hover {
@@ -345,70 +339,71 @@
 
         .faq-question::after {
             content: '+';
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            transition: transform var(--transition-speed) ease;
         }
 
-        .faq-item.open .faq-question::after {
+        .faq-item.active .faq-question::after {
             transform: rotate(45deg);
         }
 
         .faq-answer {
-            background-color: var(--white);
-            padding: 20px;
-            font-size: 1.1rem;
-            color: var(--text-light);
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 25px;
+            background-color: var(--white);
+            border-top: 1px solid #eee;
         }
 
-        .faq-item.open .faq-answer {
-            max-height: 200px; /* Adjust as needed */
-            padding: 20px;
+        .faq-answer p {
+            padding: 20px 0;
+            color: #555;
         }
 
         /* Contact Section */
-        .contact {
-            padding: 100px 0;
+        .contact-section {
+            padding: 5rem 0;
             background-color: var(--white);
+        }
+
+        .contact-section h2 {
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .contact-content {
-            display: flex;
-            justify-content: space-between;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
         }
 
-        .contact-text {
-            flex: 1;
-            text-align: left;
-            min-width: 300px;
-        }
-
-        .contact-form {
-            flex: 1;
-            background-color: var(--light-gray);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            min-width: 300px;
-            text-align: left;
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--heading-color);
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 15px;
+            padding: 12px 15px;
             margin-bottom: 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            background-color: var(--white);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 115, 150, 0.2);
         }
 
         .contact-form textarea {
@@ -416,221 +411,214 @@
             resize: vertical;
         }
 
-        .contact-form button {
+        .contact-form .submit-button {
+            display: inline-block;
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
+            padding: 15px 35px;
+            font-size: 1.1em;
             font-weight: 600;
+            border-radius: 8px;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+            border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .contact-form button:hover {
-            background-color: var(--gradient-end);
+        .contact-form .submit-button:hover {
+            background-color: var(--button-hover-bg);
             transform: translateY(-2px);
         }
 
-        /* Footer */
-        footer {
+        .contact-info {
             background-color: var(--dark-blue);
             color: var(--white);
-            padding: 50px 0 20px 0;
+            padding: 40px;
+            border-radius: 12px;
+            height: fit-content;
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .contact-info p i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .contact-info .social-links a {
+            color: var(--white);
+            font-size: 1.5em;
+            margin-right: 15px;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .contact-info .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--footer-bg);
+            color: var(--white);
+            padding: 3rem 0;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.9em;
         }
 
-        footer .container {
+        .site-footer .container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            flex-wrap: wrap;
         }
 
-        .footer-links ul {
-            list-style: none;
+        .site-footer .footer-links {
+            margin: 1.5rem 0;
             display: flex;
-            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 15px;
         }
 
-        .footer-links a {
+        .site-footer .footer-links a {
             color: var(--white);
             opacity: 0.8;
-            transition: opacity 0.3s ease;
+            transition: opacity var(--transition-speed) ease;
         }
 
-        .footer-links a:hover {
+        .site-footer .footer-links a:hover {
             opacity: 1;
         }
 
-        .copyright {
-            margin-top: 20px;
+        .site-footer p {
             opacity: 0.7;
         }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .feature-item {
-                padding: 25px;
-            }
-
-            .contact-content {
-                flex-direction: column;
-            }
-
-            .contact-form {
-                width: 100%;
-            }
+        .site-footer .logo-footer {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.5px;
         }
 
+        /* Scroll to Top Button */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle {
+            .site-header .container {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .mobile-menu-toggle {
                 display: block;
             }
 
-            nav ul {
+            .site-nav {
                 display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
                 width: 100%;
-                background-color: var(--dark-blue);
-                padding: 20px 0;
                 text-align: center;
+                padding-top: 1rem;
             }
 
-            nav ul li {
+            .site-nav ul {
+                flex-direction: column;
+            }
+
+            .site-nav ul li {
                 margin: 10px 0;
             }
 
-            nav ul.active {
-                display: flex;
+            .hero-section h1 {
+                font-size: 2.5em;
             }
 
-            .hero {
-                padding: 80px 0;
+            .hero-section p {
+                font-size: 1.2em;
             }
 
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .hero .cta-button {
-                padding: 12px 25px;
-                font-size: 1.1rem;
-                margin: 5px;
-            }
-
-            .features, .testimonials, .faq, .contact {
-                padding: 60px 0;
-            }
-
-            .features .container {
+            .features-grid {
                 grid-template-columns: 1fr;
             }
 
-            .testimonial-quote {
-                font-size: 1.3rem;
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
 
-            .faq-question {
-                font-size: 1.1rem;
+            .contact-info {
+                margin-top: 30px;
             }
 
-            footer .container {
-                flex-direction: column;
-            }
-
-            .footer-links ul {
-                margin-top: 15px;
+            .scroll-top-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
             }
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 2.2rem;
+            .hero-section {
+                padding: 4rem 0;
             }
 
-            h2 {
-                font-size: 1.8rem;
-                margin-bottom: 25px;
+            .hero-section h1 {
+                font-size: 2em;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1.1em;
             }
 
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero .cta-button {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
-            }
-
-            .feature-item {
+            .feature-card, .testimonial-item, .faq-item {
                 padding: 20px;
             }
 
-            .feature-icon {
-                font-size: 2.5rem;
-            }
-
-            .testimonial-quote::before,
-            .testimonial-quote::after {
-                font-size: 2.5rem;
-            }
-
-            .contact-form {
-                padding: 30px;
-            }
-
-            .contact-form input,
-            .contact-form textarea {
-                padding: 12px;
-            }
-
-            .contact-form button {
-                padding: 12px 25px;
-                font-size: 1rem;
+            .contact-form input, .contact-form textarea {
+                padding: 10px 12px;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">Python</a>
-            <button class="menu-toggle">☰</button>
-            <nav>
+            <div class="logo">Python</div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+            <nav class="site-nav">
                 <ul>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
@@ -642,217 +630,192 @@
     </header>
 
     <main>
-        <section class="hero" id="hero">
+        <section class="hero-section">
             <div class="container">
-                <h1>The Official Home of the <br> Python Programming Language</h1>
-                <p>Python is a powerful, expressive, and versatile programming language that is easy to learn and fun to use. It's a popular choice for web development, data science, artificial intelligence, and much more.</p>
-                <div class="cta-buttons">
-                    <a href="#features" class="cta-button">Explore Features</a>
-                    <a href="#contact" class="cta-button">Get Started</a>
-                </div>
+                <h1>The Official Home of the Python Programming Language</h1>
+                <p>Discover the power, simplicity, and versatility of Python. Start your coding journey today.</p>
+                <a href="#" class="cta-button">Get Started with Python</a>
             </div>
         </section>
 
-        <section class="features" id="features">
+        <section id="features" class="features-section">
             <div class="container">
-                <h2>Key Python Features</h2>
+                <h2>Why Choose Python?</h2>
                 <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">🐍</div>
+                    <div class="feature-card">
+                        <i class="fas fa-lightbulb"></i> <!-- Placeholder for icon -->
                         <h3>Intuitive Interpretation</h3>
-                        <p>Python's clear and readable syntax allows for faster development cycles. It's like writing in plain English, making complex logic easy to understand and implement.</p>
-                        <a href="#" class="learn-more">Learn More &rarr;</a>
+                        <p>Python's clear, readable syntax makes it easy to understand and write code, allowing you to focus on solving problems rather than on complex language constructs.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📚</div>
+                    <div class="feature-card">
+                        <i class="fas fa-box-open"></i> <!-- Placeholder for icon -->
                         <h3>Compound Data Types</h3>
-                        <p>Python offers powerful built-in data structures like lists, tuples, dictionaries, and sets, simplifying the handling of complex data collections.</p>
-                        <a href="#" class="learn-more">Learn More &rarr;</a>
+                        <p>Effortlessly work with built-in data structures like lists, tuples, dictionaries, and sets, which simplify complex data management and manipulation.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🚀</div>
+                    <div class="feature-card">
+                        <i class="fas fa-stream"></i> <!-- Placeholder for icon -->
                         <h3>All the Flow You’d Expect</h3>
-                        <p>Control flow statements like `if`, `elif`, `else`, `for`, and `while` are standard and easy to use, providing robust logic capabilities.</p>
-                        <a href="#" class="learn-more">Learn More &rarr;</a>
+                        <p>Master control flow with familiar constructs like if/elif/else statements, for loops, and while loops, making your programs dynamic and responsive.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">⚙️</div>
+                    <div class="feature-card">
+                        <i class="fas fa-cog"></i> <!-- Placeholder for icon -->
                         <h3>Functions Defined</h3>
-                        <p>Organize your code into reusable blocks with functions. Python's function definition is straightforward, promoting modularity and efficiency.</p>
-                        <a href="#" class="learn-more">Learn More &rarr;</a>
+                        <p>Organize your code into reusable blocks with functions, promoting modularity, reducing redundancy, and enhancing code maintainability.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">💡</div>
+                    <div class="feature-card">
+                        <i class="fas fa-infinity"></i> <!-- Placeholder for icon -->
                         <h3>Quick & Easy to Learn</h3>
-                        <p>With a gentle learning curve and extensive community support, Python is an excellent choice for beginners and experienced developers alike.</p>
-                        <a href="#" class="learn-more">Learn More &rarr;</a>
+                        <p>Whether you're a beginner or an experienced developer, Python's gentle learning curve allows you to become productive quickly, thanks to its extensive documentation and vibrant community.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="testimonials" id="testimonials">
+        <section id="testimonials" class="testimonials-section">
             <div class="container">
                 <h2>What Our Users Say</h2>
-                <div class="testimonial-slider">
-                    <div class="testimonial-slide active">
-                        <p class="testimonial-quote">"Python has revolutionized how we approach data analysis. Its simplicity and the vast ecosystem of libraries make complex tasks manageable and enjoyable."</p>
-                        <p class="testimonial-author">- Dr. Anya Sharma, Lead Data Scientist<span> at Innovate Solutions</span></p>
+                <div class="testimonials-slider">
+                    <div class="testimonial-item">
+                        <p class="quote">"Python has revolutionized how I approach complex data analysis. Its readability and vast libraries make difficult tasks manageable and enjoyable."</p>
+                        <div class="author">Jane Doe<span>Data Scientist</span></div>
                     </div>
-                    <div class="testimonial-slide">
-                        <p class="testimonial-quote">"As a beginner, Python was my gateway into programming. The community support and clear documentation were invaluable in getting me started."</p>
-                        <p class="testimonial-author">- Ben Carter, Aspiring Developer<span></span></p>
-                    </div>
-                    <div class="testimonial-slide">
-                        <p class="testimonial-quote">"From web applications to machine learning models, Python's flexibility is unmatched. It's the backbone of many of our innovative projects."</p>
-                        <p class="testimonial-author">- Maria Rodriguez, Senior Software Engineer<span> at TechForward Inc.</span></p>
-                    </div>
+                    <!-- Add more testimonials here if needed -->
                 </div>
             </div>
         </section>
 
-        <section class="faq" id="faq">
+        <section id="faq" class="faq-section">
             <div class="container">
                 <h2>Frequently Asked Questions</h2>
-                <div class="faq-items">
+                <div class="faq-accordion">
                     <div class="faq-item">
                         <div class="faq-question">What is Python used for?</div>
-                        <div class="faq-answer">Python is incredibly versatile and used for web development, data science, AI and machine learning, automation, game development, scientific computing, and much more.</div>
+                        <div class="faq-answer">
+                            <p>Python is incredibly versatile and is used for web development (frameworks like Django and Flask), data science, machine learning, artificial intelligence, scientific computing, automation, scripting, game development, and much more.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">Is Python difficult to learn?</div>
-                        <div class="faq-answer">Python is renowned for its readability and simple syntax, making it one of the easiest programming languages for beginners to learn.</div>
+                        <div class="faq-question">Is Python free to use?</div>
+                        <div class="faq-answer">
+                            <p>Yes, Python is an open-source language and is completely free to download, use, and distribute, even for commercial purposes.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">Do I need to pay for Python?</div>
-                        <div class="faq-answer">No, Python is free and open-source. You can download and use it without any licensing fees.</div>
+                        <div class="faq-question">How do I install Python?</div>
+                        <div class="faq-answer">
+                            <p>You can download the latest version of Python from the official Python website (python.org). The installers are available for Windows, macOS, and Linux. Follow the on-screen instructions for a straightforward installation.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">What are Python's main advantages?</div>
-                        <div class="faq-answer">Key advantages include its readability, extensive libraries, large community support, cross-platform compatibility, and versatility across various domains.</div>
+                        <div class="faq-question">What programming experience do I need?</div>
+                        <div class="faq-answer">
+                            <p>Python is known for its beginner-friendly syntax, making it an excellent choice for those new to programming. However, its power and extensive libraries also make it a favorite among experienced developers.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="contact" id="contact">
+        <section id="contact" class="contact-section">
             <div class="container">
-                <div class="contact-content">
-                    <div class="contact-text">
-                        <h2>Get in Touch</h2>
-                        <p>Have questions, a project idea, or want to contribute to the Python community? We'd love to hear from you!</p>
-                        <p>You can also find extensive documentation and community forums on our website.</p>
-                    </div>
-                    <div class="contact-form">
-                        <h3>Send Us a Message</h3>
-                        <form id="contactForm">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                            <button type="submit">Send Message</button>
-                        </form>
+                <h2>Get In Touch</h2>
+                <div class="contact-grid">
+                    <form class="contact-form">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Python Software Foundation</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Python Way, Silicon Valley, CA 94000</p>
+                        <p><i class="fas fa-envelope"></i> info@python.org</p>
+                        <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
+            <div class="logo-footer">Python</div>
             <div class="footer-links">
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Docs</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Jobs</a></li>
-                </ul>
+                <a href="#">About</a>
+                <a href="#">Jobs</a>
+                <a href="#">Contact</a>
+                <a href="#">Legal</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
             </div>
-            <div class="copyright">&copy; 2023 Python Software Foundation. All rights reserved.</div>
+            <p>&copy; 2023 Python Software Foundation. All rights reserved.</p>
         </div>
     </footer>
 
+    <button class="scroll-top-btn" aria-label="Scroll to top">&#x25B2;</button>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Menu Toggle
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navUl = document.querySelector('nav ul');
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const siteNav = document.querySelector('.site-nav');
 
-            if (menuToggle && navUl) {
-                menuToggle.addEventListener('click', () => {
-                    navUl.classList.toggle('active');
+            if (mobileMenuToggle && siteNav) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    siteNav.style.display = siteNav.style.display === 'block' ? 'none' : 'block';
                 });
-            }
-
-            // Smooth Scrolling for internal links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                        // Close mobile menu if open
-                        if (navUl && navUl.classList.contains('active')) {
-                            navUl.classList.remove('active');
-                        }
-                    }
-                });
-            });
-
-            // Testimonial Slider
-            const slides = document.querySelectorAll('.testimonial-slide');
-            let currentSlide = 0;
-            const slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-
-            function nextSlide() {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
             }
 
             // FAQ Accordion
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
                 question.addEventListener('click', () => {
-                    item.classList.toggle('open');
+                    item.classList.toggle('active');
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        answer.style.padding = "20px 25px";
+                    } else {
+                        answer.style.maxHeight = null;
+                        answer.style.padding = "0 25px";
+                    }
                 });
             });
 
-            // Simple Form Submission Handler (for demonstration)
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your message! We will get back to you shortly.');
-                    contactForm.reset(); // Reset the form
-                });
-            }
-
-            // Active Link Highlighting based on scroll
-            const sections = document.querySelectorAll('main section');
-            const navLinks = document.querySelectorAll('nav ul li a');
+            // Scroll to Top Button
+            const scrollTopBtn = document.querySelector('.scroll-top-btn');
 
             window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 50; // 50px offset for header
-                    const sectionHeight = section.clientHeight;
-                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                        current = section.getAttribute('id');
-                    }
-                });
+                if (window.scrollY > 200) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
 
-                navLinks.forEach(link => {
-                    link.classList.remove('active-link');
-                    if (link.getAttribute('href').substring(1) === current) {
-                        link.classList.add('active-link');
-                    }
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             });
+
+            // Add Font Awesome icons (example, assuming it's loaded externally or could be inlined)
+            // For this example, we'll use generic placeholders in CSS, but you'd typically link FA CDN or include its CSS.
+            // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         });
     </script>
 </body>
